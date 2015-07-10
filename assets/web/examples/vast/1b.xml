@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VAST version="2.0">
+   <Ad id="e529f14a-6d86-4905-896f-1410901d5dad">
+      <Wrapper>
+         <AdSystem>Videoplaza Karbon</AdSystem>
+        <VASTAdTagURI><![CDATA[http://localhost/bigsoda/vmap/examples/vast/1c.xml]]></VASTAdTagURI>
+         <Error><![CDATA[http://konnect-test.videoplaza.tv/proxy/tracker/v2?aid=0&cf=short_form&dcid=911d9b52-dbf6-407d-915c-1499a49b8b09&e=0&pid=f3997825-9112-41ea-a91b-2db354dcff0d&s=mobile&t=VP10-mobile&tid=4082e5c7-0e79-11e5-bd51-002590e81073&tt=p&ua=%5Bua%5D&uc=%5Buc%5D]]></Error>
+         <Impression><![CDATA[http://pskolysz.techxstream.com/test/ebtv/vmap/impression.php?server=3]]></Impression>
+         <Creatives>
+            <Creative id="video">
+               <Linear>
+                  <TrackingEvents>
+                     <Tracking event="midpoint"><![CDATA[http://konnect-test.videoplaza.tv/proxy/tracker/v2?aid=e529f14a-6d86-4905-896f-1410901d5dad&cf=short_form&dcid=911d9b52-dbf6-407d-915c-1499a49b8b09&e=16&pid=f3997825-9112-41ea-a91b-2db354dcff0d&s=mobile&t=VP10-mobile&tid=4082e5c7-0e79-11e5-bd51-002590e81073&tt=p]]></Tracking>
+                     <Tracking event="complete"><![CDATA[http://konnect-test.videoplaza.tv/proxy/tracker/v2?aid=e529f14a-6d86-4905-896f-1410901d5dad&cf=short_form&dcid=911d9b52-dbf6-407d-915c-1499a49b8b09&e=18&pid=f3997825-9112-41ea-a91b-2db354dcff0d&s=mobile&t=VP10-mobile&tid=4082e5c7-0e79-11e5-bd51-002590e81073&tt=p]]></Tracking>
+                     <Tracking event="start"><![CDATA[http://konnect-test.videoplaza.tv/proxy/tracker/v2?aid=e529f14a-6d86-4905-896f-1410901d5dad&cf=short_form&dcid=911d9b52-dbf6-407d-915c-1499a49b8b09&e=14&pid=f3997825-9112-41ea-a91b-2db354dcff0d&s=mobile&t=VP10-mobile&tid=4082e5c7-0e79-11e5-bd51-002590e81073&tt=p]]></Tracking>
+                     <Tracking event="firstQuartile"><![CDATA[http://konnect-test.videoplaza.tv/proxy/tracker/v2?aid=e529f14a-6d86-4905-896f-1410901d5dad&cf=short_form&dcid=911d9b52-dbf6-407d-915c-1499a49b8b09&e=15&pid=f3997825-9112-41ea-a91b-2db354dcff0d&s=mobile&t=VP10-mobile&tid=4082e5c7-0e79-11e5-bd51-002590e81073&tt=p]]></Tracking>
+                     <Tracking event="close"><![CDATA[http://konnect-test.videoplaza.tv/proxy/tracker/v2?aid=e529f14a-6d86-4905-896f-1410901d5dad&cf=short_form&dcid=911d9b52-dbf6-407d-915c-1499a49b8b09&e=7&pid=f3997825-9112-41ea-a91b-2db354dcff0d&s=mobile&t=VP10-mobile&tid=4082e5c7-0e79-11e5-bd51-002590e81073&tt=p]]></Tracking>
+                     <Tracking event="thirdQuartile"><![CDATA[http://konnect-test.videoplaza.tv/proxy/tracker/v2?aid=e529f14a-6d86-4905-896f-1410901d5dad&cf=short_form&dcid=911d9b52-dbf6-407d-915c-1499a49b8b09&e=17&pid=f3997825-9112-41ea-a91b-2db354dcff0d&s=mobile&t=VP10-mobile&tid=4082e5c7-0e79-11e5-bd51-002590e81073&tt=p]]></Tracking>
+                  </TrackingEvents>
+                  <VideoClicks>
+                     <ClickTracking><![CDATA[http://konnect-test.videoplaza.tv/proxy/tracker/v2?aid=e529f14a-6d86-4905-896f-1410901d5dad&cf=short_form&dcid=911d9b52-dbf6-407d-915c-1499a49b8b09&e=20&pid=f3997825-9112-41ea-a91b-2db354dcff0d&s=mobile&t=VP10-mobile&tid=4082e5c7-0e79-11e5-bd51-002590e81073&tt=p]]></ClickTracking>
+                  </VideoClicks>
+               </Linear>
+            </Creative>
+         </Creatives>
+         <Extensions>
+            <Extension type="AdServer" name="Videoplaza">
+               <AdInfo countdown="false" allowLinearModeChange="false" gid="90d696dd-4baf-43e9-833f-4db7f7239d8f" cid="547f8882-45ad-4f97-89a4-32d4235fe129" format="spot_standard" variant="NORMAL" timeout="00:00:02.0" startAdTimeout="00:00:10.0" exclusive="false" />
+            </Extension>
+         </Extensions>
+      </Wrapper>
+   </Ad>
+</VAST>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="bs-vmap-vast" default="Test">
+
+	<target name="Test">
+        <delete dir="bin/web"/>
+        <mkdir dir="bin/web"/>
+
+        <copy todir="bin/web">
+            <fileset dir="assets/web" includes="**"/>
+        </copy>
+
+        <exec executable="haxe" failonerror="true">
+            <arg line="-cp src"/>
+            <arg line="-cp samples"/>
+            <arg line="-main Main"/>
+            <arg line="-debug"/>
+            <arg line="-js bin/web/app.js"/>
+        </exec>
+
+    </target>
+	
+</project>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VAST xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:noNamespaceSchemaLocation="http://service.videoplaza.com/schema/iab/vast-2.0.xsd">
+   <Ad id="d45b3503-a3f7-448d-9581-2854b509abbc">
+      <InLine>
+         <AdSystem>Videoplaza Karbon</AdSystem>
+         <AdTitle>videoplaza preroll</AdTitle>
+         <Impression><![CDATA[http://vp-validation.videoplaza.tv/proxy/tracker?sid=7804af89-ff66-4e8c-b2a7-7a9b5370314d&a=d45b3503-a3f7-448d-9581-2854b509abbc&e=0&t=3&dcid=6b79de78-8a8c-102f-9f01-001e4f3cd645&tags=standard&shares=validation&tid=73dedd13-26f0-11e5-ab24-002590e80caf&pid=63a59261-f423-4066-b0fb-73cb026ad6ee&rnd=-1069663749]]></Impression>
+         <Impression><![CDATA[http://vp-test.videoplaza.tv/proxy/tracker/v2?tt=p&test_type=external_pixel_tracker&test_event=impression2]]></Impression>
+         <Impression><![CDATA[http://vp-test.videoplaza.tv/proxy/tracker/v2?tt=p&test_type=external_pixel_tracker&test_event=impression3]]></Impression>
+         <Impression><![CDATA[http://vp-test.videoplaza.tv/proxy/tracker/v2?tt=p&test_type=external_pixel_tracker&test_event=impression1]]></Impression>
+         <Creatives>
+            <Creative>
+               <Linear>
+                  <Duration>00:00:10</Duration>
+                  <TrackingEvents>
+                     <Tracking event="midpoint"><![CDATA[http://vp-validation.videoplaza.tv/proxy/tracker?sid=7804af89-ff66-4e8c-b2a7-7a9b5370314d&a=d45b3503-a3f7-448d-9581-2854b509abbc&e=16&t=3&dcid=6b79de78-8a8c-102f-9f01-001e4f3cd645&tags=standard&shares=validation&tid=73dedd13-26f0-11e5-ab24-002590e80caf&pid=63a59261-f423-4066-b0fb-73cb026ad6ee&rnd=1996893696]]></Tracking>
+                     <Tracking event="complete"><![CDATA[http://vp-validation.videoplaza.tv/proxy/tracker?sid=7804af89-ff66-4e8c-b2a7-7a9b5370314d&a=d45b3503-a3f7-448d-9581-2854b509abbc&e=18&t=3&dcid=6b79de78-8a8c-102f-9f01-001e4f3cd645&tags=standard&shares=validation&tid=73dedd13-26f0-11e5-ab24-002590e80caf&pid=63a59261-f423-4066-b0fb-73cb026ad6ee&rnd=-876423025]]></Tracking>
+                     <Tracking event="start"><![CDATA[http://vp-validation.videoplaza.tv/proxy/tracker?sid=7804af89-ff66-4e8c-b2a7-7a9b5370314d&a=d45b3503-a3f7-448d-9581-2854b509abbc&e=14&t=3&dcid=6b79de78-8a8c-102f-9f01-001e4f3cd645&tags=standard&shares=validation&tid=73dedd13-26f0-11e5-ab24-002590e80caf&pid=63a59261-f423-4066-b0fb-73cb026ad6ee&rnd=487480021]]></Tracking>
+                     <Tracking event="firstQuartile"><![CDATA[http://vp-validation.videoplaza.tv/proxy/tracker?sid=7804af89-ff66-4e8c-b2a7-7a9b5370314d&a=d45b3503-a3f7-448d-9581-2854b509abbc&e=15&t=3&dcid=6b79de78-8a8c-102f-9f01-001e4f3cd645&tags=standard&shares=validation&tid=73dedd13-26f0-11e5-ab24-002590e80caf&pid=63a59261-f423-4066-b0fb-73cb026ad6ee&rnd=1533832928]]></Tracking>
+                     <Tracking event="thirdQuartile"><![CDATA[http://vp-validation.videoplaza.tv/proxy/tracker?sid=7804af89-ff66-4e8c-b2a7-7a9b5370314d&a=d45b3503-a3f7-448d-9581-2854b509abbc&e=17&t=3&dcid=6b79de78-8a8c-102f-9f01-001e4f3cd645&tags=standard&shares=validation&tid=73dedd13-26f0-11e5-ab24-002590e80caf&pid=63a59261-f423-4066-b0fb-73cb026ad6ee&rnd=740525494]]></Tracking>
+                  </TrackingEvents>
+                  <VideoClicks>
+                     <ClickThrough><![CDATA[http://vp-validation.videoplaza.tv/proxy/tracker?sid=7804af89-ff66-4e8c-b2a7-7a9b5370314d&a=d45b3503-a3f7-448d-9581-2854b509abbc&e=20&t=3&dcid=6b79de78-8a8c-102f-9f01-001e4f3cd645&tags=standard&shares=validation&tid=73dedd13-26f0-11e5-ab24-002590e80caf&pid=63a59261-f423-4066-b0fb-73cb026ad6ee&rnd=-1793573469&redirect=http%3A%2F%2Fwww.videoplaza.com]]></ClickThrough>
+                  </VideoClicks>
+                  <MediaFiles>
+                     <MediaFile bitrate="840" delivery="progressive" height="360" scalable="true" type="video/mp4" width="640"><![CDATA[http://vp.videoplaza.tv/creatives/assets/fd96a203-cc9d-4230-b8e3-812d7927e7ea/896c6825-64ac-4381-be7f-8a312babf31e.mp4]]></MediaFile>
+                     <MediaFile bitrate="361" delivery="progressive" height="360" scalable="true" type="video/mp4" width="640"><![CDATA[http://vp.videoplaza.tv/creatives/assets/fd96a203-cc9d-4230-b8e3-812d7927e7ea/d03d6ebd-9b4e-49e7-9e3a-fec5870fccf2.mp4]]></MediaFile>
+                  </MediaFiles>
+               </Linear>
+            </Creative>
+            <Creative>
+               <CompanionAds>
+                  <Companion id="ff12eee8-f02a-4e13-b4c1-1423730beab8" height="250" width="300">
+                     <HTMLResource><![CDATA[<a href="http://vp-validation.videoplaza.tv/proxy/tracker?sid=7804af89-ff66-4e8c-b2a7-7a9b5370314d&a=ff12eee8-f02a-4e13-b4c1-1423730beab8&e=90&t=5&dcid=6b79de78-8a8c-102f-9f01-001e4f3cd645&tags=standard&shares=validation&tid=73dedd13-26f0-11e5-ab24-002590e80caf&pid=63a59261-f423-4066-b0fb-73cb026ad6ee&rnd=14035928&redirect=http%3A%2F%2Fcompaniontest.com" target="_blank" alt=""><img src="${ad.banner}" width="300" height="250" border="0" /></a><img src='http://vp-validation.videoplaza.tv/proxy/tracker?sid=7804af89-ff66-4e8c-b2a7-7a9b5370314d&a=ff12eee8-f02a-4e13-b4c1-1423730beab8&e=90&t=5&dcid=6b79de78-8a8c-102f-9f01-001e4f3cd645&tags=standard&shares=validation&tid=73dedd13-26f0-11e5-ab24-002590e80caf&pid=63a59261-f423-4066-b0fb-73cb026ad6ee&rnd=-1118712335'/>]]></HTMLResource>
+                  </Companion>
+               </CompanionAds>
+            </Creative>
+         </Creatives>
+         <Extensions>
+            <Extension type="CustomTracking" name="Videoplaza Custom Ids">
+               <customid>skipOffset=5</customid>
+            </Extension>
+         </Extensions>
+      </InLine>
+   </Ad>
+   <Ad id="eb2e224f-f5c5-4867-a8f6-0ae572811333">
+      <InLine>
+         <AdSystem>Videoplaza Karbon</AdSystem>
+         <AdTitle>test second pre roll</AdTitle>
+         <Impression><![CDATA[http://vp-validation.videoplaza.tv/proxy/tracker?sid=7804af89-ff66-4e8c-b2a7-7a9b5370314d&a=eb2e224f-f5c5-4867-a8f6-0ae572811333&e=0&t=3&dcid=6b79de78-8a8c-102f-9f01-001e4f3cd645&tags=standard&shares=validation&tid=73dedd13-26f0-11e5-ab24-002590e80caf&pid=63a59261-f423-4066-b0fb-73cb026ad6ee&rnd=266860968]]></Impression>
+         <Impression><![CDATA[http://vp-validation.videoplaza.tv/proxy/tracker/v2?tt=p&test_type=external_pixel_tracker&test_event=preroll2_impression2]]></Impression>
+         <Impression><![CDATA[http://vp-validation.videoplaza.tv/proxy/tracker/v2?tt=p&test_type=external_pixel_tracker&test_event=preroll2_impression1]]></Impression>
+         <Creatives>
+            <Creative>
+               <Linear>
+                  <Duration>00:00:10</Duration>
+                  <TrackingEvents>
+                     <Tracking event="midpoint"><![CDATA[http://vp-validation.videoplaza.tv/proxy/tracker?sid=7804af89-ff66-4e8c-b2a7-7a9b5370314d&a=eb2e224f-f5c5-4867-a8f6-0ae572811333&e=16&t=3&dcid=6b79de78-8a8c-102f-9f01-001e4f3cd645&tags=standard&shares=validation&tid=73dedd13-26f0-11e5-ab24-002590e80caf&pid=63a59261-f423-4066-b0fb-73cb026ad6ee&rnd=-1236855562]]></Tracking>
+                     <Tracking event="complete"><![CDATA[http://vp-validation.videoplaza.tv/proxy/tracker?sid=7804af89-ff66-4e8c-b2a7-7a9b5370314d&a=eb2e224f-f5c5-4867-a8f6-0ae572811333&e=18&t=3&dcid=6b79de78-8a8c-102f-9f01-001e4f3cd645&tags=standard&shares=validation&tid=73dedd13-26f0-11e5-ab24-002590e80caf&pid=63a59261-f423-4066-b0fb-73cb026ad6ee&rnd=-1876129841]]></Tracking>
+                     <Tracking event="start"><![CDATA[http://vp-validation.videoplaza.tv/proxy/tracker?sid=7804af89-ff66-4e8c-b2a7-7a9b5370314d&a=eb2e224f-f5c5-4867-a8f6-0ae572811333&e=14&t=3&dcid=6b79de78-8a8c-102f-9f01-001e4f3cd645&tags=standard&shares=validation&tid=73dedd13-26f0-11e5-ab24-002590e80caf&pid=63a59261-f423-4066-b0fb-73cb026ad6ee&rnd=-1360411162]]></Tracking>
+                     <Tracking event="firstQuartile"><![CDATA[http://vp-validation.videoplaza.tv/proxy/tracker?sid=7804af89-ff66-4e8c-b2a7-7a9b5370314d&a=eb2e224f-f5c5-4867-a8f6-0ae572811333&e=15&t=3&dcid=6b79de78-8a8c-102f-9f01-001e4f3cd645&tags=standard&shares=validation&tid=73dedd13-26f0-11e5-ab24-002590e80caf&pid=63a59261-f423-4066-b0fb-73cb026ad6ee&rnd=-1397501953]]></Tracking>
+                     <Tracking event="thirdQuartile"><![CDATA[http://vp-validation.videoplaza.tv/proxy/tracker?sid=7804af89-ff66-4e8c-b2a7-7a9b5370314d&a=eb2e224f-f5c5-4867-a8f6-0ae572811333&e=17&t=3&dcid=6b79de78-8a8c-102f-9f01-001e4f3cd645&tags=standard&shares=validation&tid=73dedd13-26f0-11e5-ab24-002590e80caf&pid=63a59261-f423-4066-b0fb-73cb026ad6ee&rnd=-619976281]]></Tracking>
+                  </TrackingEvents>
+                  <VideoClicks>
+                     <ClickThrough><![CDATA[http://vp-validation.videoplaza.tv/proxy/tracker?sid=7804af89-ff66-4e8c-b2a7-7a9b5370314d&a=eb2e224f-f5c5-4867-a8f6-0ae572811333&e=20&t=3&dcid=6b79de78-8a8c-102f-9f01-001e4f3cd645&tags=standard&shares=validation&tid=73dedd13-26f0-11e5-ab24-002590e80caf&pid=63a59261-f423-4066-b0fb-73cb026ad6ee&rnd=880989301&redirect=http%3A%2F%2Fvideoplaza.com]]></ClickThrough>
+                  </VideoClicks>
+                  <MediaFiles>
+                     <MediaFile bitrate="837" delivery="progressive" height="284" scalable="true" type="video/mp4" width="504"><![CDATA[http://vp.videoplaza.tv/creatives/assets/626e97c4-ec4e-4eea-91f7-a9f455a9688a/4c856fe0-0b87-487d-9420-3ae3cb8ba99a.mp4]]></MediaFile>
+                     <MediaFile bitrate="356" delivery="progressive" height="284" scalable="true" type="video/mp4" width="504"><![CDATA[http://vp.videoplaza.tv/creatives/assets/626e97c4-ec4e-4eea-91f7-a9f455a9688a/457bb521-ae9f-47b4-8a67-0fa72cacfc4e.mp4]]></MediaFile>
+                  </MediaFiles>
+               </Linear>
+            </Creative>
+         </Creatives>
+         <Extensions>
+            <Extension type="CustomTracking" name="Videoplaza Custom Ids">
+               <customid>audio</customid>
+            </Extension>
+         </Extensions>
+      </InLine>
+   </Ad>
+   <Ad id="11126040.140208305013120" sequence="1">
+      <Wrapper>
+         <AdSystem>FreeWheel</AdSystem>
+         <VASTAdTagURI><![CDATA[http://localhost/bigsoda/vmap/examples/vast/1a.xml]]></VASTAdTagURI>
+         <Error><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&iw=&uxnw=&uxss=&uxct=&et=e&cn=%5BERRORCODE%5D]]></Error>
+         <Impression><![CDATA[http://pskolysz.techxstream.com/test/ebtv/vmap/impression.php?server=1]]></Impression>
+         <Creatives>
+            <Creative AdID="11126040">
+               <Linear>
+                  <TrackingEvents>
+                     <Tracking event="complete"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=complete&et=i&_cc=&tpos=0&init=1&iw=&uxnw=&uxss=&uxct=&metr=2047]]></Tracking>
+                     <Tracking event="firstQuartile"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=firstQuartile&et=i&_cc=&tpos=0&init=1&iw=&uxnw=&uxss=&uxct=&metr=2047]]></Tracking>
+                     <Tracking event="midpoint"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=midPoint&et=i&_cc=&tpos=0&init=1&iw=&uxnw=&uxss=&uxct=&metr=2047]]></Tracking>
+                     <Tracking event="thirdQuartile"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=thirdQuartile&et=i&_cc=&tpos=0&init=1&iw=&uxnw=&uxss=&uxct=&metr=2047]]></Tracking>
+                     <Tracking event="mute"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=_mute&et=s&_cc=&tpos=0]]></Tracking>
+                     <Tracking event="unmute"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=_un-mute&et=s&_cc=&tpos=0]]></Tracking>
+                     <Tracking event="collapse"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=_collapse&et=s&_cc=&tpos=0]]></Tracking>
+                     <Tracking event="expand"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=_expand&et=s&_cc=&tpos=0]]></Tracking>
+                     <Tracking event="pause"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=_pause&et=s&_cc=&tpos=0]]></Tracking>
+                     <Tracking event="resume"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=_resume&et=s&_cc=&tpos=0]]></Tracking>
+                     <Tracking event="rewind"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=_rewind&et=s&_cc=&tpos=0]]></Tracking>
+                     <Tracking event="acceptInvitation"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=_accept-invitation&et=s&_cc=&tpos=0]]></Tracking>
+                     <Tracking event="close"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=_close&et=s&_cc=&tpos=0]]></Tracking>
+                  </TrackingEvents>
+                  <VideoClicks>
+                     <ClickTracking id="FWc_11126040.0"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=defaultClick&et=c&_cc=&tpos=0&cr=]]></ClickTracking>
+                  </VideoClicks>
+               </Linear>
+            </Creative>
+         </Creatives>
+      </Wrapper>
+   </Ad>
+</VAST>

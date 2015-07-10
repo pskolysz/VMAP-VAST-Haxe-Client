@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VAST version="2.0">
+   <Ad id="2306">
+      <Wrapper>
+         <AdSystem>AdSolution NextGen</AdSystem>
+         <VASTAdTagURI><![CDATA[http://localhost/bigsoda/vmap/examples/vast/1b.xml]]></VASTAdTagURI>
+         <Impression id="ang"><![CDATA[http://ac.eu.angsrvr.com/count?type=imp&crea=2306&ite=1877&cpg=596&adv=1979&plc=1013189&sit=102875&pub=2232&iid=b94b8929-ee7c-4f10-989d-a175ff7f5b4f&ep=1433834938&pac=1&url=http://angsrvr.r.worldssl.net/img/trpx.gif]]></Impression>
+         <Impression id="psync"><![CDATA[http://pskolysz.techxstream.com/test/ebtv/vmap/impression.php?server=2a]]></Impression>
+         <Impression id="psync"><![CDATA[http://pskolysz.techxstream.com/test/ebtv/vmap/impression.php?server=2b]]></Impression>
+         <Impression id="psync"><![CDATA[http://pskolysz.techxstream.com/test/ebtv/vmap/impression.php?server=2c]]></Impression>
+         <Impression id="psync"><![CDATA[http://pskolysz.techxstream.com/test/ebtv/vmap/impression.php?server=2d]]></Impression>
+         <Impression id="psync"><![CDATA[http://pskolysz.techxstream.com/test/ebtv/vmap/impression.php?server=2e]]></Impression>
+         <Impression id="psync"><![CDATA[http://pskolysz.techxstream.com/test/ebtv/vmap/impression.php?server=2f]]></Impression>
+         <Impression id="psync"><![CDATA[http://pskolysz.techxstream.com/test/ebtv/vmap/impression.php?server=2g]]></Impression>
+         <Impression id="psync"><![CDATA[http://pskolysz.techxstream.com/test/ebtv/vmap/impression.php?server=2h]]></Impression>
+         <Impression id="psync"><![CDATA[http://pskolysz.techxstream.com/test/ebtv/vmap/impression.php?server=2i]]></Impression>
+         <Error><![CDATA[http://ac.eu.angsrvr.com/count?type=vasterr&crea=2306&ite=1877&cpg=596&adv=1979&plc=1013189&sit=102875&pub=2232&iid=b94b8929-ee7c-4f10-989d-a175ff7f5b4f&ep=1433834938&subtype=[ERRORCODE]&url=http://angsrvr.r.worldssl.net/img/trpx.gif]]></Error>
+         <Creatives>
+            <Creative AdID="2306">
+               <Linear>
+                  <TrackingEvents>
+                     <Tracking event="complete"><![CDATA[http://ac.eu.angsrvr.com/count?type=complete&crea=2306&ite=1877&cpg=596&adv=1979&plc=1013189&sit=102875&pub=2232&iid=b94b8929-ee7c-4f10-989d-a175ff7f5b4f&ep=1433834938&url=http://angsrvr.r.worldssl.net/img/trpx.gif]]></Tracking>
+                     <Tracking event="firstQuartile"><![CDATA[http://ac.eu.angsrvr.com/count?type=firstQuartile&crea=2306&ite=1877&cpg=596&adv=1979&plc=1013189&sit=102875&pub=2232&iid=b94b8929-ee7c-4f10-989d-a175ff7f5b4f&ep=1433834938&url=http://angsrvr.r.worldssl.net/img/trpx.gif]]></Tracking>
+                     <Tracking event="midpoint"><![CDATA[http://ac.eu.angsrvr.com/count?type=midpoint&crea=2306&ite=1877&cpg=596&adv=1979&plc=1013189&sit=102875&pub=2232&iid=b94b8929-ee7c-4f10-989d-a175ff7f5b4f&ep=1433834938&url=http://angsrvr.r.worldssl.net/img/trpx.gif]]></Tracking>
+                     <Tracking event="mute"><![CDATA[http://ac.eu.angsrvr.com/count?type=mute&crea=2306&ite=1877&cpg=596&adv=1979&plc=1013189&sit=102875&pub=2232&iid=b94b8929-ee7c-4f10-989d-a175ff7f5b4f&ep=1433834938&url=http://angsrvr.r.worldssl.net/img/trpx.gif]]></Tracking>
+                     <Tracking event="pause"><![CDATA[http://ac.eu.angsrvr.com/count?type=pause&crea=2306&ite=1877&cpg=596&adv=1979&plc=1013189&sit=102875&pub=2232&iid=b94b8929-ee7c-4f10-989d-a175ff7f5b4f&ep=1433834938&url=http://angsrvr.r.worldssl.net/img/trpx.gif]]></Tracking>
+                     <Tracking event="start"><![CDATA[http://ac.eu.angsrvr.com/count?type=start&crea=2306&ite=1877&cpg=596&adv=1979&plc=1013189&sit=102875&pub=2232&iid=b94b8929-ee7c-4f10-989d-a175ff7f5b4f&ep=1433834938&url=http://angsrvr.r.worldssl.net/img/trpx.gif]]></Tracking>
+                     <Tracking event="thirdQuartile"><![CDATA[http://ac.eu.angsrvr.com/count?type=thirdQuartile&crea=2306&ite=1877&cpg=596&adv=1979&plc=1013189&sit=102875&pub=2232&iid=b94b8929-ee7c-4f10-989d-a175ff7f5b4f&ep=1433834938&url=http://angsrvr.r.worldssl.net/img/trpx.gif]]></Tracking>
+                     <Tracking event="unmute"><![CDATA[http://ac.eu.angsrvr.com/count?type=unmute&crea=2306&ite=1877&cpg=596&adv=1979&plc=1013189&sit=102875&pub=2232&iid=b94b8929-ee7c-4f10-989d-a175ff7f5b4f&ep=1433834938&url=http://angsrvr.r.worldssl.net/img/trpx.gif]]></Tracking>
+                  </TrackingEvents>
+                  <VideoClicks>
+                     <ClickTracking id="ang"><![CDATA[http://ac.eu.angsrvr.com/count?type=cli&crea=2306&ite=1877&cpg=596&adv=1979&plc=1013189&sit=102875&pub=2232&iid=b94b8929-ee7c-4f10-989d-a175ff7f5b4f&ep=1433834938&url=http://angsrvr.r.worldssl.net/img/trpx.gif]]></ClickTracking>
+                  </VideoClicks>
+               </Linear>
+            </Creative>
+         </Creatives>
+      </Wrapper>
+   </Ad>
+</VAST>

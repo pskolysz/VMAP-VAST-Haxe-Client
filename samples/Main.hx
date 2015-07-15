@@ -1,4 +1,5 @@
 package;
+import bs.model.Ad;
 import bs.vast.VASTClient;
 import js.html.ProgressEvent;
 import js.html.XMLHttpRequest;
@@ -18,12 +19,8 @@ class Main
 	
 	static function onVastLoadSucces(data:Xml):Void 
 	{
-		VASTClient.checkForWrappers(data, onWrapperedComplete);
-	}
-	
-	static private function onWrapperedComplete(data:Xml):Void
-	{
-		VASTClient.parseVast(data);
+		//TODO change to array
+		var ad:Ad = VASTClient.parseVast(data);
 	}
 	
 	static function onVastError(data:Dynamic):Void 

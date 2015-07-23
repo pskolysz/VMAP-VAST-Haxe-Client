@@ -5,7 +5,7 @@ import bs.interfaces.IParser;
  * ...
  * @author Piotr Skolysz <piotr.skolysz@bigsoda.pl>
  */
-class VAST_2_0 implements IParser
+class VAST_3_0 implements IParser
 {
 
 	public function new() 
@@ -13,9 +13,9 @@ class VAST_2_0 implements IParser
 		
 	}
 	
-	public function parse(xml:Xml):Void
+	public function parse(vast:Xml):Void 
 	{
-		trace("PARSE FROM VAST_2_0 Parser");
+		trace("PARSE FROM VAST_3_0 Parser");
 	}
 	
 }

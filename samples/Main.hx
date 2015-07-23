@@ -1,8 +1,6 @@
 package;
 import bs.model.Ad;
 import bs.vast.VASTClient;
-import js.html.ProgressEvent;
-import js.html.XMLHttpRequest;
 
 /**
  * ...
@@ -19,8 +17,7 @@ class Main
 	
 	static function onVastLoadSucces(data:Xml):Void 
 	{
-		//TODO change to array
-		var ad:Ad = VASTClient.parseVast(data);
+		var ads:Array<Ad> = VASTClient.parseVast(data);
 	}
 	
 	static function onVastError(data:Dynamic):Void 

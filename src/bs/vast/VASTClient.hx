@@ -1,6 +1,7 @@
 package bs.vast;
 import bs.model.Ad;
 import bs.parser.VAST_2_0;
+import bs.parser.VAST_3_0;
 import haxe.Constraints.Function;
 import haxe.Http;
 import haxe.xml.Fast;
@@ -18,17 +19,18 @@ class VASTClient
 		
 	}
 	
-	public static function parseVast(xml:Xml):Ad
-	{
+	public static function parseVast(xml:Xml):Array<Ad>
+	{ 
+		
 		VastParser.parse(xml, VAST_2_0);
-		return new Ad();
+		return new Array<Ad>();
 	}
 	
 	public static function getVast(url:String, success:Function, error:Function, ?timeout = 6000):Void
 	{
 		var req:XMLHttpRequest = new XMLHttpRequest();
 		req.onerror = error;
-		req.timeout = timeout;
+		
 		req.onloadend = function():Void 
 		{
 			if (req.status == 200) 
@@ -44,7 +46,8 @@ class VASTClient
 			
 		}; 
 		req.open('GET', url);
+		req.timeout = timeout;
 		req.send();
-		
 	}
+	
 }

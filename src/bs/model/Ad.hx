@@ -6,6 +6,9 @@ package bs.model;
  */
 class Ad
 {
+	public static var WRAPPER:String = "Wrapper";
+	public static var INLINE:String = "InLine";
+	
 	public var system:String;
 	public var title:String;
 	

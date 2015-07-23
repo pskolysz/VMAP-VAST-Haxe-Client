@@ -15,7 +15,7 @@
          <Impression id="psync"><![CDATA[http://pskolysz.techxstream.com/test/ebtv/vmap/impression.php?server=2h]]></Impression>
          <Impression id="psync"><![CDATA[http://pskolysz.techxstream.com/test/ebtv/vmap/impression.php?server=2i]]></Impression>
          <Error><![CDATA[http://ac.eu.angsrvr.com/count?type=vasterr&crea=2306&ite=1877&cpg=596&adv=1979&plc=1013189&sit=102875&pub=2232&iid=b94b8929-ee7c-4f10-989d-a175ff7f5b4f&ep=1433834938&subtype=[ERRORCODE]&url=http://angsrvr.r.worldssl.net/img/trpx.gif]]></Error>
-         <Creatives>
+        <!--<Creatives>
             <Creative AdID="2306">
                <Linear>
                   <TrackingEvents>
@@ -33,7 +33,7 @@
                   </VideoClicks>
                </Linear>
             </Creative>
-         </Creatives>
+         </Creatives>-->
       </Wrapper>
    </Ad>
 </VAST>

@@ -103,6 +103,38 @@
                      <Tracking event="close"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=_close&et=s&_cc=&tpos=0]]></Tracking>
                   </TrackingEvents>
                   <VideoClicks>
+                     <ClickTracking id="FWc_11126040.0"><![CDATA[http://localhost/test!Clicktracking]]></ClickTracking>
+                  </VideoClicks>
+               </Linear>
+            </Creative>
+         </Creatives>
+      </Wrapper>
+   </Ad>
+	<Ad id="11126040.1402083050131110" sequence="2">
+      <Wrapper>
+         <AdSystem>FreeWheel</AdSystem>
+         <VASTAdTagURI><![CDATA[http://localhost/bigsoda/vmap/examples/vast/1a-empty.xml]]></VASTAdTagURI>
+         <Error><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&iw=&uxnw=&uxss=&uxct=&et=e&cn=%5BERRORCODE%5D]]></Error>
+         <Impression><![CDATA[http://pskolysz.techxstream.com/test/ebtv/vmap/impression.php?server=1]]></Impression>
+         <Creatives>
+            <Creative AdID="11126040">
+               <Linear>
+                  <TrackingEvents>
+                     <Tracking event="complete"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=complete&et=i&_cc=&tpos=0&init=1&iw=&uxnw=&uxss=&uxct=&metr=2047]]></Tracking>
+                     <Tracking event="firstQuartile"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=firstQuartile&et=i&_cc=&tpos=0&init=1&iw=&uxnw=&uxss=&uxct=&metr=2047]]></Tracking>
+                     <Tracking event="midpoint"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=midPoint&et=i&_cc=&tpos=0&init=1&iw=&uxnw=&uxss=&uxct=&metr=2047]]></Tracking>
+                     <Tracking event="thirdQuartile"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=thirdQuartile&et=i&_cc=&tpos=0&init=1&iw=&uxnw=&uxss=&uxct=&metr=2047]]></Tracking>
+                     <Tracking event="mute"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=_mute&et=s&_cc=&tpos=0]]></Tracking>
+                     <Tracking event="unmute"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=_un-mute&et=s&_cc=&tpos=0]]></Tracking>
+                     <Tracking event="collapse"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=_collapse&et=s&_cc=&tpos=0]]></Tracking>
+                     <Tracking event="expand"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=_expand&et=s&_cc=&tpos=0]]></Tracking>
+                     <Tracking event="pause"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=_pause&et=s&_cc=&tpos=0]]></Tracking>
+                     <Tracking event="resume"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=_resume&et=s&_cc=&tpos=0]]></Tracking>
+                     <Tracking event="rewind"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=_rewind&et=s&_cc=&tpos=0]]></Tracking>
+                     <Tracking event="acceptInvitation"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=_accept-invitation&et=s&_cc=&tpos=0]]></Tracking>
+                     <Tracking event="close"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=_close&et=s&_cc=&tpos=0]]></Tracking>
+                  </TrackingEvents>
+                  <VideoClicks>
                      <ClickTracking id="FWc_11126040.0"><![CDATA[http://intearsheet.v.fwmrm.net/ad/l/1?s=debugn&n=381953%3B381953&t=1433834853859102012&f=2&r=381953&adid=11126040&reid=4053052&arid=0&auid=&cn=defaultClick&et=c&_cc=&tpos=0&cr=]]></ClickTracking>
                   </VideoClicks>
                </Linear>
@@ -110,4 +142,5 @@
          </Creatives>
       </Wrapper>
    </Ad>
+	
 </VAST>

@@ -1,93 +1,67 @@
 package bs.vast;
-import js.html.XMLHttpRequest;
+import bs.interfaces.IParser;
+import bs.model.Ad;
+import bs.parser.Wrapper;
+import bs.tools.Trace;
+import js.html.DOMParser;
+import js.html.SupportedType;
+
 /**
  * ...
  * @author Piotr Skolysz <piotr.skolysz@bigsoda.pl>
  */
 class VastParser
 {
-	static var orginalVast:Xml;
+	/*TODO followAdditonalWrappers
+	a Boolean value that identifies whether subsequent wrappers after a
+	requested VAST response is allowed. If false, any Wrappers received (i.e. not an Inline VAST response)
+	should be ignored. Otherwise, VAST Wrappers received should be accepted.
+	*/
+	
+	/*TODO  allowMultipleAds
+	a Boolean value that identifies whether multiple ads are allowed in the
+	requested VAST response. If true, both Pods and stand-alone ads are allowed. If false, only the first
+	stand-alone Ad (i.e. no sequence value for the Ad) in the requested VAST response is allowed.*/
+	
+	/*TODO fallbackOnNoAd
+	a Boolean value that provides instruction for using an available Ad when the
+	requested VAST response returns no ads. If true, the video player should select from any stand-alone
+	ads available. If false and the Wrapper represents an Ad in a Pod, the video player should move on to
+	the next Ad in a Pod; otherwise, the video player can follow through at its own discretion where no-ad
+	responses are concerned.*/
+	
+	static var vast:Xml;
+	static var parser:IParser;
 	public function new() 
 	{
 		
 	}
 	
-	public static function parse(data:Xml, parser:Class<Dynamic>):Void 
-	{
-		
-		orginalVast = data;
-		checkForWrappers(data);
-		//var parser = Type.createInstance(parser, []);
-		//parser.parse(data);
-		
+	/**
+	 * Parsing the VAST Xml to VAST Model
+	 * @param	vast VAST Xml
+	 * @param	parser class of VAST Version - 1.0, 2.0, 3.0, must implement parser interface.
+	 */
+	public static function parse(vast:Xml, parserClass:Class<IParser>):Void 
+	{	
+		Wrapper.check(vast, onWrapperSuccess, onWrapperError, onWrapperWarn);
+		parser = cast Type.createInstance(parserClass, []);
 	}
 	
-	
-	static function checkForWrappers(xml:Xml):Void
+	static function onWrapperSuccess(data:Xml):Void 
 	{
-		for (ad in xml.firstElement().elementsNamed("Ad")) 
-		{
-			if (ad.firstElement().nodeName == "Wrapper") {
-				loadXML(ad.firstElement().elementsNamed("VASTAdTagURI").next().firstChild().nodeValue);
-				break;
-			}
-		}
+		Trace.logColor("onWrapperSuccess");
+		vast = data;
+		Trace.xmlFromString(vast.toString());
 	}
 	
-	static function loadXML(url:String):Void
+	static function onWrapperError(data:Dynamic):Void 
 	{
-		var req:XMLHttpRequest = new XMLHttpRequest();
-		req.onloadend = function():Void 
-		{
-			if (req.status == 200) 
-			{
-				var xml = Xml.parse(req.response); 
-				for (ad in xml.firstElement().elementsNamed("Ad")) 
-				{
-					if (ad.firstElement().nodeName == "Wrapper") {
-						mergeVast(xml);
-						break;
-					}
-				}
-			} else if (req.status >= 400) {
-				//TODO error handler
-			} else {
-				//TODO error handler
-			}
-		}; 
-		req.open('GET', url);
-		req.send();
+		Trace.error(data);
 	}
 	
-	static private function mergeVast(wrapper:Xml):Void
+	static function onWrapperWarn(data:Dynamic):Void 
 	{
-		//TODO wrapper can be empty
-		//TODO wrapper can not have a Ad tag
-		//TODO behavior for more that one wrapper in orginal XML
-		
-		
-		//Wrapper exists and has tags
-		var orginalWrapper = Xml.parse("");
-		for (ad in orginalVast.firstElement().elementsNamed("Ad")) 
-		{
-			if (ad.firstElement().nodeName == "Wrapper") {
-				orginalWrapper = ad.firstElement();
-				ad.removeChild(orginalWrapper);
-				ad.addChild(wrapper.firstElement().firstElement().firstElement());
-				addOldTags(ad, orginalWrapper);
-				break;
-			}
-		}
-		trace(orginalVast.toString());
-		checkForWrappers(orginalVast);
-	}
-	
-	static private function addOldTags(ad:Xml, orginalWrapper:Xml) 
-	{
-		//Impressions
-		for (impression in orginalWrapper.elementsNamed("Impression")) 
-		{
-			ad.firstElement().addChild(impression);
-		}
+		Trace.warn(data);
 	}
 }

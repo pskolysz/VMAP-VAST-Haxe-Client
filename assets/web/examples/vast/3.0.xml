@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<VAST xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:noNamespaceSchemaLocation="vast.xsd">
+				  <!-- <Ad id="11660486.47512294436416" sequence="1">
+					  <Wrapper>
+						 <AdSystem>FreeWheel</AdSystem>
+						 <VASTAdTagURI><![CDATA[http://as.eu.angsrvr.com/select?type=dyn&plc=1014209&cache=1150907104]]></VASTAdTagURI>
+						 <Error><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11660486&reid=4114691&arid=0&iw=&uxnw=&uxss=&uxct=&et=e&cn=%5BERRORCODE%5D]]></Error>
+						 <Impression><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11660486&reid=4114691&arid=0&auid=&cn=defaultImpression&et=i&_cc=11660486,4114691,20957.,20957.20962.,1437131446,1&tpos=0&iw=&uxnw=&uxss=&uxct=&metr=2047&init=1&cr=]]></Impression>
+						 <Creatives>
+							<Creative AdID="11660486">
+							   <Linear>
+								  <TrackingEvents>
+									 <Tracking event="complete"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11660486&reid=4114691&arid=0&auid=&cn=complete&et=i&_cc=&tpos=0&init=1&iw=&uxnw=&uxss=&uxct=&metr=2047]]></Tracking>
+									 <Tracking event="firstQuartile"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11660486&reid=4114691&arid=0&auid=&cn=firstQuartile&et=i&_cc=&tpos=0&init=1&iw=&uxnw=&uxss=&uxct=&metr=2047]]></Tracking>
+									 <Tracking event="midpoint"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11660486&reid=4114691&arid=0&auid=&cn=midPoint&et=i&_cc=&tpos=0&init=1&iw=&uxnw=&uxss=&uxct=&metr=2047]]></Tracking>
+									 <Tracking event="thirdQuartile"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11660486&reid=4114691&arid=0&auid=&cn=thirdQuartile&et=i&_cc=&tpos=0&init=1&iw=&uxnw=&uxss=&uxct=&metr=2047]]></Tracking>
+									 <Tracking event="mute"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11660486&reid=4114691&arid=0&auid=&cn=_mute&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="unmute"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11660486&reid=4114691&arid=0&auid=&cn=_un-mute&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="collapse"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11660486&reid=4114691&arid=0&auid=&cn=_collapse&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="expand"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11660486&reid=4114691&arid=0&auid=&cn=_expand&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="pause"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11660486&reid=4114691&arid=0&auid=&cn=_pause&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="resume"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11660486&reid=4114691&arid=0&auid=&cn=_resume&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="rewind"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11660486&reid=4114691&arid=0&auid=&cn=_rewind&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="acceptInvitation"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11660486&reid=4114691&arid=0&auid=&cn=_accept-invitation&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="close"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11660486&reid=4114691&arid=0&auid=&cn=_close&et=s&_cc=&tpos=0]]></Tracking>
+								  </TrackingEvents>
+								  <VideoClicks>
+									 <ClickTracking id="FWc_11660486.0"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11660486&reid=4114691&arid=0&auid=&cn=defaultClick&et=c&_cc=&tpos=0&cr=]]></ClickTracking>
+								  </VideoClicks>
+							   </Linear>
+							</Creative>
+						 </Creatives>
+					  </Wrapper>
+				   </Ad>
+				   <Ad id="11472770.47512294437376">
+					  <Wrapper>
+						 <AdSystem>FreeWheel</AdSystem>
+						 <VASTAdTagURI><![CDATA[http://addirector.vindicosuite.com/Feeds/AdDirector/VAST/2/?rid=Danskespil_2015_V4_MTG_TV3&frt=vast-xumo&imps=false&sugr=1&vpaid=1&prnd=CACHEBUSTER]]></VASTAdTagURI>
+						 <Error><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11472770&reid=3699720&arid=0&iw=&uxnw=&uxss=&uxct=&et=e&cn=%5BERRORCODE%5D]]></Error>
+						 <Impression><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11472770&reid=3699720&arid=0&auid=&cn=defaultImpression&et=i&_cc=11472770,3699720,,20957.20962.,1437131446,1&tpos=0&iw=&uxnw=&uxss=&uxct=&metr=2047&init=1&cr=http%3A//visitanalytics.userreport.com/hit.gif%3Ft%3DTTRa174e90c]]></Impression>
+						 <Impression><![CDATA[http://visitanalytics.userreport.com/hit.gif?t=TTR27550192]]></Impression>
+						 <Creatives>
+							<Creative AdID="11472770">
+							   <Linear>
+								  <TrackingEvents>
+									 <Tracking event="complete"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11472770&reid=3699720&arid=0&auid=&cn=complete&et=i&_cc=&tpos=0&init=1&iw=&uxnw=&uxss=&uxct=&metr=2047]]></Tracking>
+									 <Tracking event="firstQuartile"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11472770&reid=3699720&arid=0&auid=&cn=firstQuartile&et=i&_cc=&tpos=0&init=1&iw=&uxnw=&uxss=&uxct=&metr=2047]]></Tracking>
+									 <Tracking event="midpoint"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11472770&reid=3699720&arid=0&auid=&cn=midPoint&et=i&_cc=&tpos=0&init=1&iw=&uxnw=&uxss=&uxct=&metr=2047]]></Tracking>
+									 <Tracking event="thirdQuartile"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11472770&reid=3699720&arid=0&auid=&cn=thirdQuartile&et=i&_cc=&tpos=0&init=1&iw=&uxnw=&uxss=&uxct=&metr=2047]]></Tracking>
+									 <Tracking event="mute"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11472770&reid=3699720&arid=0&auid=&cn=_mute&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="unmute"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11472770&reid=3699720&arid=0&auid=&cn=_un-mute&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="collapse"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11472770&reid=3699720&arid=0&auid=&cn=_collapse&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="expand"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11472770&reid=3699720&arid=0&auid=&cn=_expand&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="pause"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11472770&reid=3699720&arid=0&auid=&cn=_pause&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="resume"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11472770&reid=3699720&arid=0&auid=&cn=_resume&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="rewind"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11472770&reid=3699720&arid=0&auid=&cn=_rewind&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="acceptInvitation"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11472770&reid=3699720&arid=0&auid=&cn=_accept-invitation&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="close"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11472770&reid=3699720&arid=0&auid=&cn=_close&et=s&_cc=&tpos=0]]></Tracking>
+								  </TrackingEvents>
+								  <VideoClicks>
+									 <ClickTracking id="FWc_11472770.0"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=11472770&reid=3699720&arid=0&auid=&cn=defaultClick&et=c&_cc=&tpos=0&cr=]]></ClickTracking>
+								  </VideoClicks>
+							   </Linear>
+							</Creative>
+						 </Creatives>
+					  </Wrapper>
+				   </Ad>-->
+				  <Ad id="12128723.47512294437056" sequence="2">
+					  <Wrapper>
+						 <AdSystem>FreeWheel</AdSystem>
+						 <VASTAdTagURI><![CDATA[http://cdn-ugc.brainient.com/1844/cdfc5626-1943-4b28-92b3-7dddff3f05ec.xml]]></VASTAdTagURI>
+						 <Error><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12128723&reid=4183258&arid=0&iw=&uxnw=&uxss=&uxct=&et=e&cn=%5BERRORCODE%5D]]></Error>
+						 <Impression><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12128723&reid=4183258&arid=0&auid=&cn=defaultImpression&et=i&_cc=12128723,4183258,,,1437131446,1&tpos=0&iw=&uxnw=&uxss=&uxct=&metr=2047&init=1&cr=http%3A//visitanalytics.userreport.com/hit.gif%3Ft%3DTTRa174e90c]]></Impression>
+						 <Impression><![CDATA[http://track.adform.net/adfserve/?bn=6131131;1x1inv=1;srctype=3;ord=843509512]]></Impression>
+						 <Impression><![CDATA[http://visitanalytics.userreport.com/hit.gif?t=ebspons4]]></Impression>
+						 <Creatives>
+							<Creative AdID="12128723">
+							   <Linear>
+								  <TrackingEvents>
+									 <Tracking event="complete"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12128723&reid=4183258&arid=0&auid=&cn=complete&et=i&_cc=&tpos=0&init=1&iw=&uxnw=&uxss=&uxct=&metr=2047]]></Tracking>
+									 <Tracking event="firstQuartile"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12128723&reid=4183258&arid=0&auid=&cn=firstQuartile&et=i&_cc=&tpos=0&init=1&iw=&uxnw=&uxss=&uxct=&metr=2047]]></Tracking>
+									 <Tracking event="midpoint"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12128723&reid=4183258&arid=0&auid=&cn=midPoint&et=i&_cc=&tpos=0&init=1&iw=&uxnw=&uxss=&uxct=&metr=2047]]></Tracking>
+									 <Tracking event="thirdQuartile"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12128723&reid=4183258&arid=0&auid=&cn=thirdQuartile&et=i&_cc=&tpos=0&init=1&iw=&uxnw=&uxss=&uxct=&metr=2047]]></Tracking>
+									 <Tracking event="mute"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12128723&reid=4183258&arid=0&auid=&cn=_mute&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="unmute"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12128723&reid=4183258&arid=0&auid=&cn=_un-mute&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="collapse"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12128723&reid=4183258&arid=0&auid=&cn=_collapse&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="expand"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12128723&reid=4183258&arid=0&auid=&cn=_expand&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="pause"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12128723&reid=4183258&arid=0&auid=&cn=_pause&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="resume"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12128723&reid=4183258&arid=0&auid=&cn=_resume&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="rewind"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12128723&reid=4183258&arid=0&auid=&cn=_rewind&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="acceptInvitation"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12128723&reid=4183258&arid=0&auid=&cn=_accept-invitation&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="close"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12128723&reid=4183258&arid=0&auid=&cn=_close&et=s&_cc=&tpos=0]]></Tracking>
+								  </TrackingEvents>
+								  <VideoClicks>
+									 <ClickTracking id="FWc_12128723.0"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12128723&reid=4183258&arid=0&auid=&cn=defaultClick&et=c&_cc=&tpos=0&cr=http%3A//track.adform.net/C/%3Fbn%3D6131131]]></ClickTracking>
+								  </VideoClicks>
+							   </Linear>
+							</Creative>
+						 </Creatives>
+					  </Wrapper>
+				   </Ad>
+				  <!--  <Ad id="12238714.47512294437696">
+					  <InLine>
+						 <AdSystem>FreeWheel</AdSystem>
+						 <AdTitle>Untitled Placement</AdTitle>
+						 <Error><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12238714&reid=4200407&arid=0&iw=&uxnw=&uxss=&uxct=&et=e&cn=%5BERRORCODE%5D]]></Error>
+						 <Impression id="FWi_12238714.0"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12238714&reid=4200407&arid=0&auid=&cn=defaultImpression&et=i&_cc=12238714,4200407,,,1437131446,1&tpos=0&iw=&uxnw=&uxss=&uxct=&metr=2047&init=1&asid=79586295&ssid=1373710&cr=http%3A//visitanalytics.userreport.com/hit.gif%3Ft%3DTTRa174e90c]]></Impression>
+						 <Impression id="FWi_12238714.0.1"><![CDATA[http://visitanalytics.userreport.com/hit.gif?t=ebsponsradio]]></Impression>
+						 <Creatives>
+							<Creative AdID="12238714">
+							   <Linear>
+								  <Duration>00:00:05</Duration>
+								  <TrackingEvents>
+									 <Tracking event="complete"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12238714&reid=4200407&arid=0&auid=&cn=complete&et=i&_cc=&tpos=0&init=1&iw=&uxnw=&uxss=&uxct=&metr=2047]]></Tracking>
+									 <Tracking event="firstQuartile"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12238714&reid=4200407&arid=0&auid=&cn=firstQuartile&et=i&_cc=&tpos=0&init=1&iw=&uxnw=&uxss=&uxct=&metr=2047]]></Tracking>
+									 <Tracking event="midpoint"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12238714&reid=4200407&arid=0&auid=&cn=midPoint&et=i&_cc=&tpos=0&init=1&iw=&uxnw=&uxss=&uxct=&metr=2047]]></Tracking>
+									 <Tracking event="thirdQuartile"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12238714&reid=4200407&arid=0&auid=&cn=thirdQuartile&et=i&_cc=&tpos=0&init=1&iw=&uxnw=&uxss=&uxct=&metr=2047]]></Tracking>
+									 <Tracking event="mute"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12238714&reid=4200407&arid=0&auid=&cn=_mute&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="unmute"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12238714&reid=4200407&arid=0&auid=&cn=_un-mute&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="collapse"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12238714&reid=4200407&arid=0&auid=&cn=_collapse&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="expand"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12238714&reid=4200407&arid=0&auid=&cn=_expand&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="pause"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12238714&reid=4200407&arid=0&auid=&cn=_pause&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="resume"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12238714&reid=4200407&arid=0&auid=&cn=_resume&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="rewind"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12238714&reid=4200407&arid=0&auid=&cn=_rewind&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="acceptInvitation"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12238714&reid=4200407&arid=0&auid=&cn=_accept-invitation&et=s&_cc=&tpos=0]]></Tracking>
+									 <Tracking event="close"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12238714&reid=4200407&arid=0&auid=&cn=_close&et=s&_cc=&tpos=0]]></Tracking>
+								  </TrackingEvents>
+								  <VideoClicks>
+									 <ClickThrough id="FWc_12238714.0"><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12238714&reid=4200407&arid=0&auid=&cn=defaultClick&et=c&_cc=&tpos=0&cr=http%3A//radio.ekstrabladet.dk/]]></ClickThrough>
+								  </VideoClicks>
+								  <MediaFiles>
+									 <MediaFile bitrate="1200" delivery="progressive" height="360" type="video/mp4" width="640"><![CDATA[http://freewheel.mtgx.tv/m/1/381954/57/1820217/BUMBER-ret_1437125854_56503_127.mp4]]></MediaFile>
+									 <MediaFile bitrate="700" delivery="progressive" height="288" type="video/mp4" width="512"><![CDATA[http://freewheel.mtgx.tv/m/1/381954/57/1820217/BUMBER-ret_1437125854_56503_128.mp4]]></MediaFile>
+									 <MediaFile bitrate="600" delivery="progressive" height="270" type="video/mp4" width="480"><![CDATA[http://freewheel.mtgx.tv/m/1/381954/57/1820217/BUMBER-ret_1437125854_56503_129.mp4]]></MediaFile>
+								  </MediaFiles>
+							   </Linear>
+							</Creative>
+						 </Creatives>
+					  </InLine>
+				   </Ad>
+				   
+				   <Ad id="brainstudio" sequence="3">
+					  <InLine>
+						 <AdSystem>BrainStudio</AdSystem>
+						 <AdTitle><![CDATA[BrainStudio ads for user 1844, video ab16faed-bc90-4cb9-b27e-9e99de6f42d2]]></AdTitle>
+						 <Impression id="NEW"><![CDATA[https://ac.brainient.com/track?event=aW1wcmVzc2lvbg==&video_id=ab16faed-bc90-4cb9-b27e-9e99de6f42d2&user_id=1844&platform=vpaid&tzone=&random=[CACHEBUSTING]&skip=impression]]></Impression>
+						 <Error><![CDATA[https://ac.brainient.com/track?event=ZXJyb3I=&video_id=ab16faed-bc90-4cb9-b27e-9e99de6f42d2&user_id=1844&platform=vpaid&tzone=&random=[CACHEBUSTING]&skip=error&error_code=[ERRORCODE]]]></Error>
+						 <Creatives>
+							<Creative sequence="1">
+							   <Linear>
+								  <Duration>00:00:05</Duration>
+								  <MediaFiles>
+									 <MediaFile delivery="progressive" width="640" height="360" type="application/x-shockwave-flash" apiFramework="VPAID"><![CDATA[http://cdn-ugc.brainient.com/1249/5534c175becde4_64003940_0.swf?video_id=ab16faed-bc90-4cb9-b27e-9e99de6f42d2&user_id=1844&tzone=&settings=json&settingsPath=http://cdn-tags.brainient.com/1844/ab16faed-bc90-4cb9-b27e-9e99de6f42d2/config.json]]></MediaFile>
+								  </MediaFiles>
+							   </Linear>
+							</Creative>
+						 </Creatives>
+					  </InLine>
+				   </Ad>
+				 
+				    <Ad id="840414" sequence="4">
+					  <InLine>
+						 <AdSystem version="2.0">VINDICO</AdSystem>
+						 <AdTitle />
+						 <Description />
+						 <Survey />
+						 <Error><![CDATA[https://x4.vindicosuite.com/event/e=119;l=364129;b=3596195;c=840414;smuid=Y9L0PQQjMjYNiD;msd=;a=32045;ta=1438091450;tk=722;cr=2986944133;ad=COGcFhCVkgoY7CwgCygKMNt9OJB7QIbVEEivzQxQ3qUzWKO%2F2wFgrfoBaLnmHXACeAGIAQA%3D;sapc=1;xid=156503146092302256;mpws=$SUGR_AD_WIDTH$;mphs=$SUGR_AD_HEIGHT$;dsd=$SUGR_DETERMINED_DOMAIN$;snvs=$SNAP_IN_VIEW$;sju=$SUGR_JSON_USED$;href=]]></Error>
+						 <Creatives>
+							<Creative AdID="840414" id="488249" sequence="1">
+							   <Linear>
+								  <Duration><![CDATA[00:00:25]]></Duration>
+								  <AdParameters />
+								  <TrackingEvents />
+								  <VideoClicks />
+								  <MediaFiles>
+									 <MediaFile delivery="progressive" width="300" height="250" type="application/x-shockwave-flash" apiFramework="VPAID"><![CDATA[https://sdk.vindicosuite.com/sugr/swf/r/sugr.swf?vpaid=1&ppid=&plid=&pcid=&clid=3&uebu=https%3A%2F%2Fx4.vindicosuite.com%2Fevent%2Fe%3D%24SUGR_CUSTOM_EVENT_ID%24%3Bl%3D364129%3Bb%3D3596195%3Bc%3D840414%3Bsmuid%3DY9L0PQQjMjYNiD%3Bmsd%3D%3Ba%3D32045%3Bta%3D1438091450%3Btk%3D55046%3Bcr%3D653269297%3Bad%3DCOGcFhCVkgoY7CwgCygKMNt9OJB7QIbVEEivzQxQ3qUzWKO%252F2wFgrfoBaLnmHXACeAGIAQA%253D%3Bsapc%3D1%3Bxid%3D156503146092302256%3Bmpws%3D%24SUGR_AD_WIDTH%24%3Bmphs%3D%24SUGR_AD_HEIGHT%24%3Bdsd%3D%24SUGR_DETERMINED_DOMAIN%24%3Bsnvs%3D%24SNAP_IN_VIEW%24%3Bsju%3D%24SUGR_JSON_USED%24%3Bdcr%3D1%3Beav%3D%24SUGR_EVENT_ARGUMENT%24%3B%24SUGR_EVENT_PARAM%24%3Beov%3D%24SUGR_EVENT_OBJ%24&json=0&cec=1&snvtl=25&vasturl=https%3A%2F%2Fx4.vindicosuite.com%2Fserve%2F%3Fv%3D5%3Bm%3D4%3Bl%3D364129%3Bc%3D840414%3Bb%3D3596195%3Bad%3DCOGcFhCVkgoY7CwgCygKMNt9OJB7QIbVEEivzQxQ3qUzWKO%252F2wFgrfoBaLnmHXACeAGIAQA%253D%3Bsapc%3D1%3Bxid%3D156503146092302256%3Ba%3D32045%3Bsmuid%3DY9L0PQQjMjYNiD%3Bts%3D1438091450%3Bmpws%3D%24SUGR_AD_WIDTH%24%3Bmphs%3D%24SUGR_AD_HEIGHT%24%3Bdsd%3D%24SUGR_DETERMINED_DOMAIN%24%3Bsnvs%3D%24SNAP_IN_VIEW%24%3Bsju%3D%24SUGR_JSON_USED%24%3Bcavr%3D1]]></MediaFile>
+								  </MediaFiles>
+							   </Linear>
+							</Creative>
+						 </Creatives>
+						 <Extensions />
+					  </InLine>
+				   </Ad>
+				  <Ad id="1660374" sequence="5">
+					  <InLine>
+						 <AdSystem version="2.0">VINDICO</AdSystem>
+						 <AdTitle><![CDATA[DanskeSpil_Oddset_2015 | 04.02.-31.12.2015 | V2 MTG]]></AdTitle>
+						 <Description />
+						 <Survey />
+						 <Error />
+						 <Creatives>
+							<Creative AdID="1660374" id="340650" sequence="1">
+							   <Linear>
+								  <Duration>00:00:15</Duration>
+								  <TrackingEvents />
+								  <MediaFiles>
+									 <MediaFile delivery="progressive" bitrate="1000" width="640" height="360" type="application/x-shockwave-flash" apiFramework="VPAID"><![CDATA[http://sdk.vindicosuite.com/sugr/swf/r/Sugr.swf?adId=1660374&suid=3662550944&rid=Danskespil_2015_V2_MTG_TV3&sugr=1&vpaid=1&prnd=CACHEBUSTER]]></MediaFile>
+								  </MediaFiles>
+							   </Linear>
+							</Creative>
+							<Creative AdID="1660374" id="10003723" sequence="1">
+							   <CompanionAds>
+								  <Companion id="10003723" width="1" height="1">
+									 <IFrameResource><![CDATA[http://cache.vindicosuite.com/Feeds/Generator/2.0/GetAdDirector_BannerCreative.asp?bannerCreativeAdModuleId=10003723&siteId=4499&syndicationOutletId=181646&campaignId=21164&adRotationId=107950&campaignAccountId=1700&campaignBrandId=6491&campaignClientId=2287&InstreamAdModuleId=340650&lb=0&cb=635736745312301351]]></IFrameResource>
+								  </Companion>
+								  <Companion id="10003723" width="1" height="1">
+									 <StaticResource creativeType="image/jpeg" />
+								  </Companion>
+							   </CompanionAds>
+							</Creative>
+						 </Creatives>
+						 <Extensions>
+							<Extension type="ADML">
+							   <SuperSlate conservesize="true">
+								  <GridSize>64</GridSize>
+								  <TriggerPoint>TRIGGER_START</TriggerPoint>
+								  <BackgroundVideoPresent>true</BackgroundVideoPresent>
+								  <GlobalScaleSetting>ALWAYS</GlobalScaleSetting>
+								  <VideoStopEndsAd>true</VideoStopEndsAd>
+								  <DesignSize>1280,720</DesignSize>
+								  <BackgroundURL width="1280" height="720"><![CDATA[http://cdn.vindicosuite.com/Repository/CampaignCreative/Campaign_19372/BANNERCREATIVE/white.jpg]]></BackgroundURL>
+								  <StatusBar HideBar="true" />
+								  <SmartTiles>
+									 <SmartTile id="adVideo" order="1">
+										<TileStyle><![CDATA[margin-left:0px;margin-top:0px;]]></TileStyle>
+										<Status>inactive</Status>
+										<Actions>
+										   <Action>
+											  <ActionType>TIMECODE</ActionType>
+											  <ActionTime>0</ActionTime>
+											  <ActionCode>{call:endSlate.init_banner;}</ActionCode>
+										   </Action>
+										   <Action>
+											  <ActionType>TIMECODE</ActionType>
+											  <ActionTime>7</ActionTime>
+											  <ActionNext><![CDATA[endSlate.scene2]]></ActionNext>
+										   </Action>
+										   <Action>
+											  <ActionType>TIMECODE</ActionType>
+											  <ActionTime>9.85</ActionTime>
+											  <ActionNext><![CDATA[endSlate.clickhere]]></ActionNext>
+										   </Action>
+										</Actions>
+										<Video width="1280" height="720" stretch="false" />
+									 </SmartTile>
+									 <SmartTile order="2" id="endSlate">
+										<Tile customAction="true"><![CDATA[http://cdn.vindicosuite.com/Repository/CampaignCreative/Campaign_20991/BANNERCREATIVE/danskeOverlayv2E.swf]]></Tile>
+										<TileStyle><![CDATA[margin-left:0px;margin-top:0px;]]></TileStyle>
+										<Actions>
+										   <Action id="stopAd" />
+										   <Action id="triggerAd">
+											  <ActionCode><![CDATA[{activate:adVideo;}]]></ActionCode>
+										   </Action>
+										   <Action id="clickhere">
+											  <ActionCode><![CDATA[{call:endSlate.clickHere;}]]></ActionCode>
+										   </Action>
+										   <Action id="scene2">
+											  <ActionCode><![CDATA[{call:endSlate.scene2;}]]></ActionCode>
+										   </Action>
+										</Actions>
+									 </SmartTile>
+									 <SmartTile id="actionNode" order="0">
+										<Actions>
+										   <Action id="launchClick">
+											  <ActionType>CTL</ActionType>
+											  <ActionURL><![CDATA[http://track.adform.net/C/?bn=5542566]]></ActionURL>
+											  <ActionTag>CLICK_OVERLAY</ActionTag>
+										   </Action>
+										</Actions>
+									 </SmartTile>
+								  </SmartTiles>
+								  <TrackingBase><![CDATA[http://trk.vindicosuite.com/Tracking/V5/Instream/Impression/?%SWITCH%-4499-181646-340650-21164-107950-undefined-2287-6491-1700-BBEEND-&iari=1660374&cb=635736745312301351&internalRedirect=false]]></TrackingBase>
+							   </SuperSlate>
+							</Extension>
+							<Extension type="GeoLocation">
+							   <GeoLocation>
+								  <Country>POL</Country>
+								  <Longitude>21.0071</Longitude>
+								  <Latitude>52.2526</Latitude>
+								  <ZipCode>00-807</ZipCode>
+								  <AreaCode>0</AreaCode>
+								  <ConnSpeed>broadband</ConnSpeed>
+								  <ContinentCode>5</ContinentCode>
+								  <MetroCode>-1</MetroCode>
+							   </GeoLocation>
+							</Extension>
+							<Extension type="VindicoMeta">
+							   <VindicoMeta>
+								  <Adtricity>1</Adtricity>
+								  <AccountID>1700</AccountID>
+								  <SiteID>4499</SiteID>
+								  <CampaignID>21164</CampaignID>
+								  <RotationID>107950</RotationID>
+								  <SyndicationOutletID>181646</SyndicationOutletID>
+								  <PIOID><![CDATA[<ioid>]]></PIOID>
+								  <PBKID><![CDATA[<bkid>]]></PBKID>
+								  <PCID><![CDATA[<cid>]]></PCID>
+								  <PBID><![CDATA[<bid>]]></PBID>
+							   </VindicoMeta>
+							</Extension>
+						 </Extensions>
+					  </InLine>
+				   </Ad>
+				  <Ad id="brainstudio" sequence="6">
+					  <InLine>
+						 <AdSystem>BrainStudio</AdSystem>
+						 <AdTitle><![CDATA[BrainStudio ads for user 1844, video ab16faed-bc90-4cb9-b27e-9e99de6f42d2]]></AdTitle>
+						 <Impression id="NEW"><![CDATA[https://ac.brainient.com/track?event=aW1wcmVzc2lvbg==&video_id=ab16faed-bc90-4cb9-b27e-9e99de6f42d2&user_id=1844&platform=vpaid&tzone=&random=[CACHEBUSTING]&skip=impression]]></Impression>
+						 <Error><![CDATA[https://ac.brainient.com/track?event=ZXJyb3I=&video_id=ab16faed-bc90-4cb9-b27e-9e99de6f42d2&user_id=1844&platform=vpaid&tzone=&random=[CACHEBUSTING]&skip=error&error_code=[ERRORCODE]]]></Error>
+						 <Creatives>
+							<Creative sequence="1">
+							   <Linear>
+								  <Duration>00:00:05</Duration>
+								  <MediaFiles>
+									 <MediaFile delivery="progressive" width="640" height="360" type="application/x-shockwave-flash" apiFramework="VPAID"><![CDATA[http://cdn-ugc.brainient.com/1249/5534c175becde4_64003940_0.swf?video_id=ab16faed-bc90-4cb9-b27e-9e99de6f42d2&user_id=1844&tzone=&settings=json&settingsPath=http://cdn-tags.brainient.com/1844/ab16faed-bc90-4cb9-b27e-9e99de6f42d2/config.json]]></MediaFile>
+								  </MediaFiles>
+							   </Linear>
+							</Creative>
+						 </Creatives>
+					  </InLine>
+				   </Ad>-->
+				</VAST>

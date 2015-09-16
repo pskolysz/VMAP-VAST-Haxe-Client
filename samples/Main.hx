@@ -1,5 +1,6 @@
 package;
 import bs.model.Ad;
+import bs.tools.Trace;
 import bs.vast.VASTClient;
 
 /**
@@ -12,16 +13,19 @@ class Main
 
 	public static function main() 
 	{
-		VASTClient.getVast("http://localhost/bigsoda/vmap/examples/vast/2.0.xml", onVastLoadSucces, onVastError);
+		VASTClient.getVast("http://localhost/bigsoda/vmap/examples/vast/3.0.xml", onVastLoadSuccess, onVastLoadError);
+		
 	}
 	
-	static function onVastLoadSucces(data:Xml):Void 
+	static function onVastLoadSuccess(data:Xml):Void 
 	{
+		Trace.info("Vast Load Success");
 		var ads:Array<Ad> = VASTClient.parseVast(data);
 	}
 	
-	static function onVastError(data:Dynamic):Void 
+	static function onVastLoadError(data:Dynamic):Void 
 	{
-		trace(data);
+		//Trace.error("Vast Load Error");
+		//Trace.error(data);
 	}
 }

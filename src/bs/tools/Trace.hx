@@ -1,7 +1,8 @@
 package bs.tools;
+#if js
 import js.html.DOMParser;
 import js.html.SupportedType;
-
+#end
 /**
  * ...
  * @author Piotr Skolysz <piotr.skolysz@bigsoda.pl>

@@ -45,7 +45,9 @@ class VastParser
 	public static function parse(vast:Xml, parserClass:Class<IParser>):Void 
 	{	
 		Wrapper.check(vast, onWrapperSuccess, onWrapperError, onWrapperWarn);
-		parser = cast Type.createInstance(parserClass, []);
+		//TO DO parse VAST
+		//parser = cast Type.createInstance(parserClass, []);
+		//parser.parse(vast);
 	}
 	
 	static function onWrapperSuccess(data:Xml):Void 
@@ -57,11 +59,12 @@ class VastParser
 	
 	static function onWrapperError(data:Dynamic):Void 
 	{
-		Trace.error(data);
+		//Trace.error(data);
 	}
 	
 	static function onWrapperWarn(data:Dynamic):Void 
 	{
-		Trace.warn(data);
+		//Trace.warn("onWrapperWarn");
+		//Trace.warn(data);
 	}
 }

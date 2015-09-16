@@ -1,5 +1,6 @@
 package bs.vast;
 import bs.model.Ad;
+import bs.model.HttpError;
 import bs.parser.VAST_2_0;
 import bs.parser.VAST_3_0;
 import haxe.Constraints.Function;
@@ -37,11 +38,14 @@ class VASTClient
 			{			
 				var xml = Xml.parse(req.response); 
 				success(xml);
-			} else if (req.status >= 400) {
-				error({"status":req.status, "statusText":req.statusText, "timeout":req.timeout});
 			} else {
-				error( { "status":req.status, "statusText":req.statusText } );
-				
+				for (err in HttpError.LIST) 
+				{
+					if (err.code == req.status)
+						error(err);
+					else 
+						error({code:req.status , title:"", description:req.statusText });
+				}
 			}
 			
 		}; 

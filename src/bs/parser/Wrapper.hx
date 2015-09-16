@@ -1,4 +1,6 @@
 package bs.parser;
+import bs.model.HttpError;
+import bs.model.VastError;
 import bs.tools.Trace;
 import haxe.Constraints.Function;
 import haxe.xml.Fast;
@@ -23,6 +25,8 @@ class Wrapper
 	static var success:Function;
 	static var error:Function;
 	static var warn:Function;
+	
+	//public static var requestFactory:Dynamic;
 	
 	public function new() 
 	{
@@ -51,9 +55,10 @@ class Wrapper
 			if (ad.firstElement().nodeName == "Wrapper") {
 				isWrapper = true;
 				if (wrapperGetMaxChain(ad)) {
-					warn( { "status": 310 , "statusText": "Too many redirects for wrappers. Current max chain redirect is set to " +maxWrapperChain } );
+					warn(VastError.CODE_302);
 					continue;
 				}
+				Trace.info("LOAD AD ID: " + ad.get("id"));
 				loadXML(ad.firstElement().elementsNamed("VASTAdTagURI").next().firstChild().nodeValue);
 				break;
 			}
@@ -90,13 +95,17 @@ class Wrapper
 	static function loadXML(url:String):Void
 	{
 		var req:XMLHttpRequest = new XMLHttpRequest();
+		req.onerror = function():Void {
+			Trace.info("error: " + req.status);
+		}
+		
 		req.onloadend = function():Void	{
 			if (req.status == 200) 
 				mergeVast(Xml.parse(req.response));
-			else if (req.status >= 400) 
-				warn( { "status":req.status, "statusText":req.statusText } );
-			else
-				warn( { "status":req.status, "statusText":req.statusText } );
+			else {
+				mergeVast(Xml.parse("<VAST/>"));
+				Trace.info("loadXML - 2");
+			}
 		}; 
 		req.open('GET', url);
 		req.send();
@@ -106,6 +115,8 @@ class Wrapper
 	{
 		var orginalWrapper = Xml.parse("");
 		var fastWrapper = new Fast(wrapper);
+		Trace.log("mergeVast");
+		Trace.xmlFromString(wrapper.toString());
 		
 		if (!fastWrapper.hasNode.VAST ||
 			!fastWrapper.node.VAST.hasNode.Ad ||
@@ -113,7 +124,8 @@ class Wrapper
 			!fastWrapper.node.VAST.node.Ad.hasNode.InLine)) {
 			removeWrapperTag(orginalVast);
 			checkForWrappers(orginalVast);
-			warn( { "status": 204 , "statusText": "No Content for wrapper." } );
+			warn(VastError.CODE_303);
+			Trace.log("mergeVast - IF");
 			return;
 		}
 		
@@ -142,8 +154,8 @@ class Wrapper
 				ad.removeChild(ad.firstElement());
 				var inLine = Xml.createElement("InLine");
 				ad.addChild(inLine);
-				for(element in orginalAd.firstElement().firstElement().elements()) 
-				{	if (element.nodeName == "VASTAdTagURI") continue;
+				for (element in orginalAd.firstElement().firstElement().elements()) {	
+					if (element.nodeName == "VASTAdTagURI") continue;
 					ad.firstElement().addChild(element);
 				}
 				break;
@@ -153,6 +165,7 @@ class Wrapper
 	
 	static private function addOldTags(ad:Xml, orginalWrapper:Xml):Void 
 	{
+		
 		var fastAd:Fast = new Fast(ad);
 		var fastWrapper:Fast = new Fast(orginalWrapper);
 		
@@ -180,24 +193,52 @@ class Wrapper
 	{
 		var adHasCreatives = ad.firstElement().elementsNamed("Creatives").hasNext();
 		var wrapperHasCreatives = wrapper.elementsNamed("Creatives").hasNext();
+		//Trace.logColor("adHasCreatives: " + adHasCreatives +", wrapperHasCreatives: " + wrapperHasCreatives);
+		
 		
 		if (!adHasCreatives && wrapperHasCreatives) {
 			ad.firstElement().addChild(wrapper.elementsNamed("Creatives").next());
 		}
 		
+		
+		
 		if (adHasCreatives && wrapperHasCreatives) {
 			for (creative in wrapper.elementsNamed("Creatives").next().elementsNamed("Creative")) {
 				//Linear Tracking
+				Trace.xmlFromString(ad.firstElement().elementsNamed("Creatives").next().elementsNamed("Creative").next().toString());
+				
 				for (tracking in creative.elementsNamed("Linear").next().elementsNamed("TrackingEvents").next().elementsNamed("Tracking")) {
-					ad.firstElement().elementsNamed("Creatives").next().elementsNamed("Creative").next().elementsNamed("Linear").next().elementsNamed("TrackingEvents").next().addChild(tracking);
+					//TODO Ad doesn't have Tracking event
+					var f:Fast = new Fast(ad.firstElement().elementsNamed("Creatives").next().elementsNamed("Creative").next().elementsNamed("Linear").next());
+					Trace.logColor("fast: " + f.hasNode.TrackingEvents);
+					Trace.logColor(ad.firstElement().elementsNamed("Creatives").next().elementsNamed("Creative").next().elementsNamed("Linear").next().elementsNamed("TrackingEvents").hasNext());
+					
+					if(ad.firstElement().elementsNamed("Creatives").next().elementsNamed("Creative").next().elementsNamed("Linear").next().elementsNamed("TrackingEvents").hasNext()) {
+						ad.firstElement().elementsNamed("Creatives").next().elementsNamed("Creative").next().elementsNamed("Linear").next().elementsNamed("TrackingEvents").next().addChild(tracking);
+					} else {
+						Trace.logColor("ADD TRACKING EVENTS");
+						ad.firstElement().elementsNamed("Creatives").next().elementsNamed("Creative").next().elementsNamed("Linear").next().addChild(Xml.parse("<TrackingEvents></TrackingEvents>"));
+						
+						//ad.firstElement().elementsNamed("Creatives").next().elementsNamed("Creative").next().elementsNamed("Linear").next().elementsNamed("TrackingEvents").next().addChild(tracking);
+					}
+					
 				}
+				Trace.xmlFromString(ad.firstElement().elementsNamed("Creatives").next().elementsNamed("Creative").next().toString());
 				
 				//Linear Video clicks
-				for (videoClick in creative.elementsNamed("Linear").next().elementsNamed("VideoClicks").next().elements())	{
-					ad.firstElement().elementsNamed("Creatives").next().elementsNamed("Creative").next().elementsNamed("Linear").next().elementsNamed("VideoClicks").next().addChild(videoClick);
-				}
+				//for (videoClick in creative.elementsNamed("Linear").next().elementsNamed("VideoClicks").next().elements())	{
+					//ad.firstElement().elementsNamed("Creatives").next().elementsNamed("Creative").next().elementsNamed("Linear").next().elementsNamed("VideoClicks").next().addChild(videoClick);
+				//}
 				
 			}
 		}
 	}
+	
+	/*static function newXMLHttpRequest(): XMLHttpRequest
+	{
+		if (requestFactory) {
+			return Type.createInstance(requestFactory, []);
+		}
+		return new XMLHttpRequest();
+	}*/
 }

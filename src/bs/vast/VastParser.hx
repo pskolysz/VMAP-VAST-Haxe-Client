@@ -33,8 +33,6 @@ class VastParser
 	responses are concerned.*/
 	
 	static var vast:Xml;
-	static var onParseSuccess:Function;
-	static var onParseError:Function;
 	public function new() 
 	{
 		
@@ -45,7 +43,7 @@ class VastParser
 	 * @param	vast VAST Xml
 	 * @param	parser class of VAST Version - 1.0, 2.0, 3.0, must implement parser interface.
 	 */
-	public static function parse(vast:Xml, parserType:Class<IParser>,  success:Function, error:Function):Void
+	public static function parse(vast:Xml, parserType:Class<IParser>,  success:Array<Ad>->Void, error:Dynamic->Void):Void
 	{	
 		var parser:IParser = cast Type.createInstance(parserType, []);
 		Wrapper.check(vast, function (data:Xml) { success(parser.parse(data)); }, error, onWrapperWarn);

@@ -21,11 +21,7 @@ class Main
 	
 	static function onVastLoadSuccess(data:Xml):Void 
 	{
-		var onVastParseSuccess:Function = function(data:Array<Ad>) 
-		{
-			var ads:Array<Ad> = data;
-		};
-		
+		var onVastParseSuccess:Array<Ad>->Void = function(data:Array<Ad>) { var ads:Array<Ad> = data; };
 		VASTClient.parseVast(data, onVastParseSuccess, onVastError);
 	}
 	

@@ -2,6 +2,7 @@ package bs.vast;
 import bs.interfaces.IParser;
 import bs.model.Ad;
 import bs.model.HttpError;
+import bs.parser.VAST_1_0;
 import bs.parser.VAST_2_0;
 import bs.parser.VAST_3_0;
 import bs.tools.Trace;
@@ -23,11 +24,12 @@ class VASTClient
 		
 	}
 	
-	public static function parseVast(xml:Xml, success:Function, error:Function):Void
+	public static function parseVast(xml:Xml, success:Array<Ad>->Void, error:Dynamic->Void):Void
 	{ 
 		var version = new Fast(xml).node.VAST.att.version;
 		var parser:Class<IParser>;
 		switch(version) {
+			case "1.0": parser = VAST_1_0; 
 			case "2.0": parser = VAST_2_0;
 			case "3.0": parser = VAST_3_0;
 			default : parser = VAST_3_0;
@@ -35,7 +37,7 @@ class VASTClient
 		VastParser.parse(xml, parser, success, error);
 	}
 	
-	public static function getVast(url:String, success:Function, error:Function, ?timeout = 6000):Void
+	public static function getVast(url:String, success:Dynamic->Void, error:Dynamic->Void, ?timeout = 6000):Void
 	{
 		var req:XMLHttpRequest = new XMLHttpRequest();
 		req.onerror = error;

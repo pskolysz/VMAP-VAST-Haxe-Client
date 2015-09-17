@@ -1,6 +1,8 @@
 package bs.parser;
 import bs.interfaces.IParser;
+import bs.model.Ad;
 import bs.tools.Trace;
+import haxe.Constraints.Function;
 
 /**
  * ...
@@ -14,9 +16,10 @@ class VAST_2_0 implements IParser
 		
 	}
 	
-	public function parse(xml:Xml):Void
+	public function parse(xml:Xml):Array<Ad> 
 	{
 		trace("PARSE FROM VAST_2_0 Parser");
+		return new Array<Ad>();
 	}
 	
 }

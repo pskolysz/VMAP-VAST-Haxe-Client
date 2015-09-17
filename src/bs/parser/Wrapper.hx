@@ -58,7 +58,7 @@ class Wrapper
 					warn(VastError.CODE_302);
 					continue;
 				}
-				Trace.info("LOAD AD ID: " + ad.get("id"));
+				
 				loadXML(ad.firstElement().elementsNamed("VASTAdTagURI").next().firstChild().nodeValue);
 				break;
 			}

@@ -3,6 +3,8 @@ import bs.interfaces.IParser;
 import bs.model.Ad;
 import bs.parser.Wrapper;
 import bs.tools.Trace;
+import haxe.CallStack;
+import haxe.Constraints.Function;
 import js.html.DOMParser;
 import js.html.SupportedType;
 
@@ -31,7 +33,8 @@ class VastParser
 	responses are concerned.*/
 	
 	static var vast:Xml;
-	static var parser:IParser;
+	static var onParseSuccess:Function;
+	static var onParseError:Function;
 	public function new() 
 	{
 		
@@ -42,29 +45,14 @@ class VastParser
 	 * @param	vast VAST Xml
 	 * @param	parser class of VAST Version - 1.0, 2.0, 3.0, must implement parser interface.
 	 */
-	public static function parse(vast:Xml, parserClass:Class<IParser>):Void 
+	public static function parse(vast:Xml, parserType:Class<IParser>,  success:Function, error:Function):Void
 	{	
-		Wrapper.check(vast, onWrapperSuccess, onWrapperError, onWrapperWarn);
-		//TO DO parse VAST
-		//parser = cast Type.createInstance(parserClass, []);
-		//parser.parse(vast);
-	}
-	
-	static function onWrapperSuccess(data:Xml):Void 
-	{
-		Trace.logColor("onWrapperSuccess");
-		vast = data;
-		Trace.xmlFromString(vast.toString());
-	}
-	
-	static function onWrapperError(data:Dynamic):Void 
-	{
-		//Trace.error(data);
+		var parser:IParser = cast Type.createInstance(parserType, []);
+		Wrapper.check(vast, function (data:Xml) { success(parser.parse(data)); }, error, onWrapperWarn);
 	}
 	
 	static function onWrapperWarn(data:Dynamic):Void 
 	{
-		//Trace.warn("onWrapperWarn");
-		//Trace.warn(data);
+		
 	}
 }

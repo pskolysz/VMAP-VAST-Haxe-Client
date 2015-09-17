@@ -1,5 +1,6 @@
 package;
-import bs.model.Ad;
+import bs.model.vast.ad.Ad;
+import bs.model.vast.Vast;
 import bs.parser.VAST_2_0;
 import bs.parser.VAST_3_0;
 import bs.tools.Trace;
@@ -21,19 +22,12 @@ class Main
 	
 	static function onVastLoadSuccess(data:Xml):Void 
 	{
-		var onVastParseSuccess:Array<Ad>->Void = function(data:Array<Ad>) { var ads:Array<Ad> = data; };
+		var onVastParseSuccess:Vast->Void = function(data:Vast) { var vast:Vast = data; };
 		VASTClient.parseVast(data, onVastParseSuccess, onVastError);
 	}
 	
 	static function onVastError(data:Dynamic):Void 
 	{
 		Trace.error(data);
-	}
-	
-	//static function onVastParseSuccess(data:Array<Ad>):Void 
-	//{
-		//var ads:Array<Ad> = data;
-		//trace(ads);
-	//}
-	
+	}	
 }

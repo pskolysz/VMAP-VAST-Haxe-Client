@@ -10,9 +10,9 @@ class Resource
 	public var creativeType:MIMEType;
 	public var url:String;
 	
-	public function new(type:String) 
+	public function new(type:ResourceType) 
 	{
-		type = resourceType;
+		this.type = type;
 	}
 	
 }

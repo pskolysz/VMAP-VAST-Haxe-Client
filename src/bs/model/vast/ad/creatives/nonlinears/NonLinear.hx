@@ -20,7 +20,7 @@ class NonLinear implements ICreativeDetails
 	/**
 	 * [Requierd] the pixel height of the placement slot for which the creative is intended
 	 */
-	public var height:Float
+	public var height:Float;
 	/**
 	 * the maximum width in pixels of the creative in its expanded state
 	 */

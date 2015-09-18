@@ -22,7 +22,7 @@ class VAST_3_0 implements IParser
 	{
 		var data:Vast = new Vast();
 		vast = new Fast(vastXML);
-		data.version = vast.node.VAST.att.version; 
+		data.version = cast (vast.node.VAST.att.version, VastVersion); 
 		data.ads = getAds();
 		trace(data);
 		return data;

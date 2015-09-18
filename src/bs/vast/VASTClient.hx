@@ -30,7 +30,7 @@ class VASTClient
 		var version = new Fast(xml).node.VAST.att.version;
 		var parser:Class<IParser>;
 		switch(version) {
-			case "1.0" | "2.0" | "3.0": parser = VAST_3_0; 
+			case VastVersion.v_2_0 | VastVersion.v_2_0 | VastVersion.v_3_0 : parser = VAST_3_0; 
 			default : parser = VAST_3_0;
 		}
 		VastParser.parse(xml, parser, success, error);

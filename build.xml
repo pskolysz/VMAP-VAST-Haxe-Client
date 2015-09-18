@@ -10,11 +10,24 @@
         </copy>
 
         <exec executable="haxe" failonerror="true">
-            <arg line="-cp src"/>
-            <arg line="-cp samples"/>
-            <arg line="-main Main"/>
-            <arg line="-debug"/>
-            <arg line="-js bin/web/app.js"/>
+            <arg line="build.hxml"/>
+        </exec>
+
+    </target>
+
+	<target name="Doc">
+        <delete dir="bin/web"/>
+        <mkdir dir="bin/web"/>
+		
+        <exec executable="haxe" failonerror="true">
+            <arg line="-xml bin/doc.xml"/>
+            <arg line="build.hxml"/>
+        </exec>
+		
+        <exec executable="haxelib" failonerror="true">
+            <arg line="run"/>
+            <arg line="dox"/>
+            <arg line="-i bin"/>
         </exec>
 
     </target>

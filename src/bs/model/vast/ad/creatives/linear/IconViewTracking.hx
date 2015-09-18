@@ -1,13 +1,12 @@
-package bs.model.vast.ad.extensions;
+package bs.model.vast.ad.creatives.linear;
 
 /**
  * ...
  * @author Piotr Skolysz <piotr.skolysz@bigsoda.pl>
  */
-class Extension
+class IconViewTracking
 {
-	public var type:String;
-	public var data:String;
+	public var url:String;
 	public function new() 
 	{
 		

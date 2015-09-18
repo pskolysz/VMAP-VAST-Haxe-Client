@@ -1,5 +1,6 @@
 package;
 import bs.model.vast.ad.Ad;
+import bs.model.vast.ad.creatives.Click;
 import bs.model.vast.Vast;
 import bs.parser.VAST_2_0;
 import bs.parser.VAST_3_0;
@@ -16,8 +17,7 @@ class Main
 	
 	public static function main() 
 	{
-		VASTClient.getVast("http://localhost/bigsoda/vmap/examples/vast/3.0.xml", onVastLoadSuccess, onVastError);
-		
+		VASTClient.getVast("http://localhost/bigsoda/vmap/examples/vast/1a.xml", onVastLoadSuccess, onVastError);
 	}
 	
 	static function onVastLoadSuccess(data:Xml):Void 

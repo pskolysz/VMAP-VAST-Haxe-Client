@@ -1,0 +1,5 @@
+-cp src
+-cp samples
+-main Main
+-debug
+-js bin/web/app.js

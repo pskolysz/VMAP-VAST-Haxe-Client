@@ -1,13 +1,12 @@
-package bs.model;
+package bs.model.vast.ad;
 
 /**
  * ...
  * @author Piotr Skolysz <piotr.skolysz@bigsoda.pl>
  */
-class Vast
+class Error
 {
-	public var version:String;
-	
+	public var url:String;
 	public function new() 
 	{
 		

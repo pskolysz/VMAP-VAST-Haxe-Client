@@ -48,7 +48,7 @@ abstract ClickType(String)
 	 */
 	var COMPANION_CLICK_TRACKING = "CompanionClickTracking";
 	/**
-	 * contains a URI for a Webpage that the video player should open in a Web browser window when the user clicks on the Nonlinear creative
+	 * contains a URI for a Webpage that the video player should open in a Web browser window when the user clicks on the Nonlinear creative; 
 	 */
 	var NON_LINEAR_CLICK_THROUGH = "NonLinearClickThrough";
 	/**

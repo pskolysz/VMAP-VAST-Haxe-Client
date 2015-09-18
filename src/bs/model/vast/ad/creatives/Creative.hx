@@ -26,7 +26,9 @@ class Creative
 	 * the technology used for any included API
 	 */
 	public var apiFramework:String;
-	
+	/**
+	 * the container for one or more CreativeExtension elements
+	 */
 	public var creativeExtensions:Array<CreativeExtension>;
 	/**
 	 * one of Linear, Companion or NonLinear

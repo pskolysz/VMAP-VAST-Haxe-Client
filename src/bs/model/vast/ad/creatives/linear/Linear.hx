@@ -34,7 +34,9 @@ class Linear implements ICreativeDetails
 	 * A <Linear> element may optionally contain a <VideoClicks> element, which is used to specify what the video player should do if the user clicks directly within the video player frame while the ad is being displayed.  If a <VideoClicks> element is provided, it must contain a single child <ClickThrough> element, and optionally contain one or more child <ClickTracking> and <CustomClick> elements. 
 	 */
 	public var videoClicks:Array<Click>;
-	
+	/**
+	 * When the <Icons> element is included in the VAST response, the video player must display the object as an overlay on top of the Linear Ad with which the icon is served and after the ad video has started (i.e. first frame of video is displayed in the player). 
+	 */
 	public var icons:Array<Icon>;
 	
 	public function new() 

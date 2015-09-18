@@ -6,7 +6,10 @@ package bs.model.vast.ad.creatives;
  */
 class AdParameters
 {
-	public var xmlEncoded:String;
+	/**
+	 *  if true AdParameters data is xml encoded.
+	 */
+	public var xmlEncoded:Bool;
 	public var data:String;
 	
 	public function new() 

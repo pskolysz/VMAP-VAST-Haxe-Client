@@ -17,7 +17,7 @@ class Main
 	
 	public static function main() 
 	{
-		VASTClient.getVast("http://localhost/bigsoda/vmap/examples/vast/3.0.xml", onVastLoadSuccess, onVastError);
+		VASTClient.getVast("http://localhost/bigsoda/vmap/examples/vast/1a.xml", onVastLoadSuccess, onVastError);
 	}
 	
 	static function onVastLoadSuccess(data:Xml):Void 

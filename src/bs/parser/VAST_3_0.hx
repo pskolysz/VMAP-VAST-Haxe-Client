@@ -2,6 +2,7 @@ package bs.parser;
 import bs.interfaces.IParser;
 import bs.model.vast.ad.Ad;
 import bs.model.vast.ad.AdSystem;
+import bs.model.vast.ad.creatives.Creative;
 import bs.model.vast.ad.Impression;
 import bs.model.vast.Vast;
 import bs.tools.Trace;
@@ -22,6 +23,7 @@ class VAST_3_0 implements IParser
 	
 	public function parse(vastXML:Xml):Vast
 	{
+		Trace.xmlFromString(vastXML.toString());
 		trace("parse: VAST_3_0" );
 		var data:Vast = new Vast();
 		vast = new Fast(vastXML);
@@ -40,13 +42,13 @@ class VAST_3_0 implements IParser
 			var ad:Ad = new Ad();
 			//Requierd
 			ad.id = adFast.att.id;
-			ad.impressions = getImpressions(adFast);
-			ad.system = getAdSystem(adFast);
-			//ad.title;
-			//ad.creatives;
+			ad.impressions = getImpressions(adFast.node.InLine.nodes.Impression);
+			ad.system = getAdSystem(adFast.node.InLine.node.AdSystem);
+			ad.title = adFast.node.InLine.node.AdTitle.innerData;
+			ad.creatives = getCreatives(adFast.node.InLine.node.Creatives.nodes.Creative);
 			
 			
-			//optional
+			//Optional
 			trace(ad);
 		}
 		
@@ -60,20 +62,33 @@ class VAST_3_0 implements IParser
 		return result;
 	}
 	
-	function getAdSystem(ad:Fast):AdSystem
+	function getCreatives(creatives:List<Fast>):Array<Creative>
+	{
+		var result:Array<Creative> = new Array<Creative>();
+		for (crtv in creatives) 
+		{
+			var creative:Creative = new Creative();
+			result.push(creative);
+		}
+		
+		return result;
+	}
+	
+	
+	
+	function getAdSystem(adSystemFast:Fast):AdSystem
 	{
 		var adSystem:AdSystem = new AdSystem();
-		adSystem.name = ad.node.InLine.node.AdSystem.innerData;
-		if (ad.node.InLine.node.AdSystem.has.version) 
-			adSystem.version = ad.node.InLine.node.AdSystem.att.version;
+		adSystem.name = adSystemFast.innerData;
+		if (adSystemFast.has.version) adSystem.version = adSystemFast.att.version;
 		return adSystem;
 	}
 	
-	function getImpressions(ad:Fast):Array<Impression> 
+	function getImpressions(impressions:List<Fast>):Array<Impression> 
 	{
 		var result:Array<Impression> = new Array<Impression>();
 		
-		for (imp in ad.node.InLine.nodes.Impression) 
+		for (imp in impressions) 
 		{
 			var impression:Impression = new Impression();
 			if (imp.has.id) impression.id = imp.att.id;

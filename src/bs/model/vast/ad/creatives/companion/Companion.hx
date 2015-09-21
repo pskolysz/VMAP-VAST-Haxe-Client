@@ -1,6 +1,7 @@
 package bs.model.vast.ad.creatives.companion;
 import bs.interfaces.ICreativeDetails;
 import bs.model.vast.ad.creatives.AdParameters;
+import bs.model.vast.ad.creatives.CreativeDetails;
 import bs.model.vast.ad.creatives.Resource;
 import bs.model.vast.ad.creatives.Tracking;
 
@@ -8,7 +9,8 @@ import bs.model.vast.ad.creatives.Tracking;
  * ...
  * @author Piotr Skolysz <piotr.skolysz@bigsoda.pl>
  */
-class Companion implements ICreativeDetails
+//class Companion implements ICreativeDetails
+class Companion extends CreativeDetails
 {
 	/**
 	 * an optional identifier for the creative
@@ -75,7 +77,7 @@ class Companion implements ICreativeDetails
 	
 	public function new() 
 	{
-		
+		super();
 	}
 	
 }

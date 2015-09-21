@@ -1,10 +1,18 @@
 package bs.parser;
+import bs.interfaces.ICreativeDetails;
 import bs.interfaces.IParser;
 import bs.model.vast.ad.Ad;
 import bs.model.vast.ad.AdSystem;
+import bs.model.vast.ad.creatives.companion.Companion;
 import bs.model.vast.ad.creatives.Creative;
+import bs.model.vast.ad.creatives.CreativeDetails;
+import bs.model.vast.ad.creatives.CreativeExtension;
+import bs.model.vast.ad.creatives.linear.Linear;
+import bs.model.vast.ad.creatives.MIMEType.MIMETypeTool;
+import bs.model.vast.ad.creatives.nonlinears.NonLinear;
 import bs.model.vast.ad.Impression;
 import bs.model.vast.Vast;
+import bs.tools.TimeTool;
 import bs.tools.Trace;
 import haxe.Constraints.Function;
 import haxe.xml.Fast;
@@ -65,16 +73,69 @@ class VAST_3_0 implements IParser
 	function getCreatives(creatives:List<Fast>):Array<Creative>
 	{
 		var result:Array<Creative> = new Array<Creative>();
-		for (crtv in creatives) 
+		for (creativeFast in creatives) 
 		{
 			var creative:Creative = new Creative();
+			if (creativeFast.has.id) creative.id = creativeFast.att.id;
+			if (creativeFast.has.sequence) creative.sequence = Std.parseInt(creativeFast.att.sequence);
+			if (creativeFast.has.AdID) creative.adID = creativeFast.att.AdID;
+			if (creativeFast.has.apiFramework) creative.apiFramework = creativeFast.att.apiFramework;
+			if (creativeFast.hasNode.creativeExtensions) 
+				creative.creativeExtensions = getCreativeExtensions(creativeFast.node.CreativeExtensions.nodes.CreativeExtension);
+			if (creativeFast.hasNode.Linear) creative.details = cast getLinear(creativeFast.nodes.Linear);
+			if (creativeFast.hasNode.CompanionAds) creative.details = cast getCompanionAds(creativeFast.node.CompanionAds.nodes.Companion);
+			if (creativeFast.hasNode.NonLinearAds) creative.details  = cast getNonLinearAds(creativeFast.node.NonLinearAds.nodes.NonLinear);
+				
+			
+			trace(creative.details[0]);
 			result.push(creative);
 		}
 		
 		return result;
 	}
 	
+	function getNonLinearAds(nonLinears:List<Fast>):Array<NonLinear>
+	{
+		var result:Array<NonLinear> = new Array<NonLinear>();
+		return result;
+	}
 	
+	function getCompanionAds(nonLinears:List<Fast>):Array<Companion>
+	{
+		var result:Array<Companion> = new Array<Companion>();
+		return result;
+	}
+	
+	function getLinear(linears:List<Fast>):Array<Linear> 
+	{
+		var result:Array<Linear> = new Array<Linear>();
+		for (linearFast in linears) 
+		{
+			var linear:Linear = new Linear();
+			linear.duration = TimeTool.convertTimeToSeconds(linearFast.node.Duration.innerData);
+			if (linearFast.has.skipoffset)
+				linear.skipoffset = TimeTool.convertOffsetToSeconds(linearFast.att.skipoffset, linear.duration);
+			result.push(linear);
+			
+		}
+		
+		return result;
+	}
+	
+	function getCreativeExtensions(creativesExtensions:List<Fast>):Array<CreativeExtension>
+	{
+		var result:Array<CreativeExtension> = new Array<CreativeExtension>();
+		
+		for (creativeExtensionFast in creativesExtensions) 
+		{
+			var creativeExtension:CreativeExtension = new CreativeExtension();
+			creativeExtension.type =  getMimeType(creativeExtensionFast.att.type);
+			creativeExtension.data = creativeExtensionFast.innerData;
+			result.push(creativeExtension);
+		}
+		
+		return result;
+	}
 	
 	function getAdSystem(adSystemFast:Fast):AdSystem
 	{
@@ -88,11 +149,11 @@ class VAST_3_0 implements IParser
 	{
 		var result:Array<Impression> = new Array<Impression>();
 		
-		for (imp in impressions) 
+		for (impressionFast in impressions) 
 		{
 			var impression:Impression = new Impression();
-			if (imp.has.id) impression.id = imp.att.id;
-			impression.url = imp.innerData;
+			if (impressionFast.has.id) impression.id = impressionFast.att.id;
+			impression.url = impressionFast.innerData;
 		
 			result.push(impression);
 		}

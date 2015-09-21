@@ -6,6 +6,10 @@ package bs.model.vast.ad;
  */
 class AdSystem
 {
+
+	/**
+	 * [Requiere]
+	 */
 	public var name:String;
 	public var version:String;
 	public function new() 

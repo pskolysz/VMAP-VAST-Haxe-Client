@@ -72,7 +72,7 @@
 						 <Error><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12128723&reid=4183258&arid=0&iw=&uxnw=&uxss=&uxct=&et=e&cn=%5BERRORCODE%5D]]></Error>
 						 <Impression><![CDATA[http://5d402.v.fwmrm.net/ad/l/1?s=d015&n=381954%3B381954&t=1437131446676297009&f=&r=381954&adid=12128723&reid=4183258&arid=0&auid=&cn=defaultImpression&et=i&_cc=12128723,4183258,,,1437131446,1&tpos=0&iw=&uxnw=&uxss=&uxct=&metr=2047&init=1&cr=http%3A//visitanalytics.userreport.com/hit.gif%3Ft%3DTTRa174e90c]]></Impression>
 						 <Impression><![CDATA[http://track.adform.net/adfserve/?bn=6131131;1x1inv=1;srctype=3;ord=843509512]]></Impression>
-						 <Impression><![CDATA[http://visitanalytics.userreport.com/hit.gif?t=ebspons4]]></Impression>
+						 <Impression id="test_id"><![CDATA[http://visitanalytics.userreport.com/hit.gif?t=ebspons4]]></Impression>
 						 <Creatives>
 							<Creative AdID="12128723">
 							   <Linear>

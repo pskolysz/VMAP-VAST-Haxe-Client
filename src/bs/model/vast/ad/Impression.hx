@@ -6,6 +6,9 @@ package bs.model.vast.ad;
  */
 class Impression
 {
+	/**
+	 * [Requierd]
+	 */
 	public var url:String;
 	public var id:String;
 	

@@ -13,7 +13,7 @@ class Icon
 	public var xPosition:Float;
 	public var yPosition:Float;
 	public var duration:Float;
-	public var offset:String;
+	public var offset:Float;
 	public var apiFreamwork:String;
 	public var resource:Resource;
 	public var iconClicks:Array<Click>;

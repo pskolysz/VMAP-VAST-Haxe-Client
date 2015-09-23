@@ -32,4 +32,5 @@ abstract ResourceType(String)
 	 * Describes a "snippet" of HTML code to be inserted directly within the publisher's HTML page code.
 	 */
 	var HTML_RESOURCE = "HTMLResource";
+	
 }

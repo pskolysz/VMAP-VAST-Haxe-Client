@@ -3,15 +3,19 @@ import bs.interfaces.ICreativeDetails;
 import bs.interfaces.IParser;
 import bs.model.vast.ad.Ad;
 import bs.model.vast.ad.AdSystem;
+import bs.model.vast.ad.creatives.AdParameters;
 import bs.model.vast.ad.creatives.Click;
 import bs.model.vast.ad.creatives.companion.Companion;
 import bs.model.vast.ad.creatives.Creative;
 import bs.model.vast.ad.creatives.CreativeDetails;
 import bs.model.vast.ad.creatives.CreativeExtension;
+import bs.model.vast.ad.creatives.linear.Icon;
+import bs.model.vast.ad.creatives.linear.IconViewTracking;
 import bs.model.vast.ad.creatives.linear.Linear;
 import bs.model.vast.ad.creatives.linear.MediaFile;
 import bs.model.vast.ad.creatives.MIMEType.MIMETypeTool;
 import bs.model.vast.ad.creatives.nonlinears.NonLinear;
+import bs.model.vast.ad.creatives.Resource;
 import bs.model.vast.ad.creatives.Tracking;
 import bs.model.vast.ad.Impression;
 import bs.model.vast.Vast;
@@ -123,16 +127,89 @@ class VAST_3_0 implements IParser
 			if(linearFast.hasNode.TrackingEvents)
 				linear.trackingEvents = getTrackingEvents(linearFast.node.TrackingEvents.nodes.Tracking);
 			if(linearFast.hasNode.VideoClicks)
-					linear.videoClicks = getVideoClicks(linearFast.node.VideoClicks);
-			//linear.adParameters = 
-			//linear.icons = 
-			
-			
+				linear.videoClicks = getClicks(linearFast.node.VideoClicks);
+			if(linearFast.hasNode.AdParameters)
+				linear.adParameters = getAdParameters(linearFast.node.AdParameters);
+			if(linearFast.hasNode.Icons)
+				linear.icons = getIcons(linearFast.node.Icons.nodes.Icons);
 			result.push(linear);
+		}
+		return result;
+	}
+	
+	function getIcons(icons:List<Fast>):Array<Icon>
+	{
+		var result = new Array<Icon>();
+		for (iconFast in icons) 
+		{
+			var icon = new Icon();
+			//requierd
+			icon.program = iconFast.att.program;
+			icon.height = Std.parseFloat(iconFast.att.height);
+			icon.width = Std.parseFloat(iconFast.att.width);
+			icon.xPosition = Std.parseFloat(iconFast.att.xPosition);
+			icon.yPosition = Std.parseFloat(iconFast.att.yPosition);
+			icon.resource = getResource(iconFast);
 			
+			//optional
+			if(iconFast.has.apiFramework)
+				icon.apiFreamwork = iconFast.att.apiFramework;
+			if(iconFast.has.offset)
+				icon.offset = TimeTool.convertTimeToSeconds(iconFast.att.offset);
+			if(iconFast.has.duration)
+				icon.duration = TimeTool.convertTimeToSeconds(iconFast.att.duration);
+			if(iconFast.hasNode.IconClicks)
+				icon.iconClicks = getClicks(iconFast.node.IconClicks);
+			if(iconFast.hasNode.IconViewTracking)
+				icon.iconViewTracking = getIconViewTracking(iconFast.nodes.IconViewTracking);
+			
+			result.push(icon);
 		}
 		
 		return result;
+	}
+	
+	function getIconViewTracking(iconViewTrackings:List<Fast>):Array<IconViewTracking>
+	{
+		var result = new Array<IconViewTracking>();
+		for (iconViewTrackingFast in iconViewTrackings) 
+		{
+			var iconViewTracking = new IconViewTracking();
+			iconViewTracking.url = iconViewTrackingFast.innerData;
+			result.push(iconViewTracking);
+		}
+		
+		
+		
+		return result;
+	}
+	
+	function getResource(resourceFast:Fast):Resource
+	{
+		var result:Resource;
+		if (resourceFast.hasNode.IFrameResource) {
+			result = new Resource(ResourceType.I_FRAME_RESOURCE);
+			result.url = resourceFast.node.IFrameResource.innerData;
+		} else if (resourceFast.hasNode.HTMLResource) {
+			result = new Resource(ResourceType.HTML_RESOURCE);
+			result.url = resourceFast.node.HTMLResource.innerData;
+		} else if(resourceFast.hasNode.StaticResource) {
+			result = new Resource(ResourceType.STATIC_RESOURCE);
+			result.creativeType = MIMETypeTool.getType(resourceFast.node.StaticResource.att.creativeType);
+			result.url = resourceFast.node.StaticResource.innerData;
+		} else 
+			return null;
+		
+		return result;
+	}
+	
+	function getAdParameters(adParametersFast:Fast):AdParameters
+	{
+		var adParameters = new AdParameters();
+		if(adParametersFast.has.xmlEncoded)
+			adParameters.xmlEncoded = (adParametersFast.att.xmlEncoded == "true");
+		adParameters.data = adParametersFast.innerData;
+		return adParameters;
 	}
 	
 	function getMediaFiles(mediaFiles:List<Fast>) 
@@ -169,10 +246,10 @@ class VAST_3_0 implements IParser
 		return result;
 	}
 	
-	function getVideoClicks(videoclicksFast:Fast):Array<Click>
+	function getClicks(clicksFast:Fast):Array<Click>
 	{
 		var result = new Array<Click>();
-		for (clickThroughFast in  videoclicksFast.nodes.ClickThrough) 
+		for (clickThroughFast in  clicksFast.nodes.ClickThrough) 
 		{
 			var clickThrough = new Click(ClickType.CLICK_THROUGH);
 			if (clickThroughFast.has.id)
@@ -181,7 +258,7 @@ class VAST_3_0 implements IParser
 			result.push(clickThrough);
 		}
 		
-		for (clickTrackingFast in  videoclicksFast.nodes.ClickTracking) 
+		for (clickTrackingFast in  clicksFast.nodes.ClickTracking) 
 		{
 			var clickTracking = new Click(ClickType.CLICK_TRACKING);
 			if (clickTrackingFast.has.id)
@@ -190,13 +267,49 @@ class VAST_3_0 implements IParser
 			result.push(clickTracking);
 		}
 		
-		for (customClickFast in  videoclicksFast.nodes.CustomClick) 
+		for (customClickFast in  clicksFast.nodes.CustomClick) 
 		{
 			var customClick = new Click(ClickType.CUSTOM_CLICK);
 			if (customClickFast.has.id)
 				customClick.id = customClickFast.att.id;
 			customClick.url = customClickFast.innerData;
 			result.push(customClick);
+		}
+		
+		for (iconClickThroughFast in  clicksFast.nodes.IconClickThrough) 
+		{
+			var iconClickThrough = new Click(ClickType.ICON_CLICK_THROUGH);
+			if (iconClickThroughFast.has.id)
+				iconClickThrough.id = iconClickThroughFast.att.id;
+			iconClickThrough.url = iconClickThroughFast.innerData;
+			result.push(iconClickThrough);
+		}
+		
+		for (iconClickTrackingFast in  clicksFast.nodes.IconClickTracking) 
+		{
+			var iconClickTracking = new Click(ClickType.ICON_CLICK_TRACKING);
+			if (iconClickTrackingFast.has.id)
+				iconClickTracking.id = iconClickTrackingFast.att.id;
+			iconClickTracking.url = iconClickTrackingFast.innerData;
+			result.push(iconClickTracking);
+		}
+		
+		for (nonLinearClickThroughFast in  clicksFast.nodes.NonLinearClickThrough) 
+		{
+			var nonLinearClickThrough = new Click(ClickType.NON_LINEAR_CLICK_THROUGH);
+			if (nonLinearClickThroughFast.has.id)
+				nonLinearClickThrough.id = nonLinearClickThroughFast.att.id;
+			nonLinearClickThrough.url = nonLinearClickThroughFast.innerData;
+			result.push(nonLinearClickThrough);
+		}
+		
+		for (nonLinearClickTrackingFast in  clicksFast.nodes.NonLinearClickTracking) 
+		{
+			var nonLinearClickTracking = new Click(ClickType.NON_LINEAR_CLICK_TRACKING);
+			if (nonLinearClickTrackingFast.has.id)
+				nonLinearClickTracking.id = nonLinearClickTrackingFast.att.id;
+			nonLinearClickTracking.url = nonLinearClickTrackingFast.innerData;
+			result.push(nonLinearClickTracking);
 		}
 		
 		return result;

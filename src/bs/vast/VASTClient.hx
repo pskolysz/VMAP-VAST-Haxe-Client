@@ -27,7 +27,7 @@ class VASTClient
 	
 	public static function parseVast(xml:Xml, success:Vast->Void, error:Dynamic->Void):Void
 	{ 
-		var version = new Fast(xml).node.VAST.att.version;
+		var version = Vast.getVersion(new Fast(xml).node.VAST.att.version);
 		var parser:Class<IParser>;
 		switch(version) {
 			case VastVersion.v_2_0 | VastVersion.v_2_0 | VastVersion.v_3_0 : parser = VAST_3_0; 

@@ -3,6 +3,7 @@ import bs.model.vast.ad.Ad;
 import bs.model.vast.ad.Error;
 import bs.model.vast.ad.Impression;
 import bs.model.vast.ad.Pricing;
+import bs.model.vast.Vast.VastVersion;
 /**
  *  @author Piotr Skolysz <piotr.skolysz@bigsoda.pl>
  */
@@ -26,12 +27,24 @@ class Vast
 		var a:Ad = new Ad();
 		
 	}
+	
+	public static inline function getVersion(vesion:String):VastVersion
+	{
+		if (!enumMap.exists(vesion))
+			return null;
+			
+		return enumMap.get(vesion);
+	}
+	
+	static var enumMap = ["1.0" => VastVersion.v_1_0,
+						"2.0" => VastVersion.v_2_0,
+						"3.0" => VastVersion.v_3_0];
 }
 
-@:enum
-abstract VastVersion(String) 
+enum VastVersion
 {
-	var v_1_0 = "1.0";
-	var v_2_0 = "2.0";
-	var v_3_0 = "3.0";
+	v_1_0;
+	v_2_0;
+	v_3_0;
+	
 }

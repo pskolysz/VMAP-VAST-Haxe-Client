@@ -41,7 +41,7 @@ class VAST_3_0 implements IParser
 	{
 		var result:Vast = new Vast();
 		vast = new Fast(vastXML);
-		result.version = cast (vast.node.VAST.att.version, VastVersion); 
+		result.version = Vast.getVersion(vast.node.VAST.att.version);
 		result.ads = getAds(vast.node.VAST.nodes.Ad);
 		trace(result);
 		return result;
@@ -90,6 +90,7 @@ class VAST_3_0 implements IParser
 			result.currency = pricingFast.att.currency;
 		if (pricingFast.has.model)
 			result.model = pricingFast.att.model;
+		
 		result.price = Std.parseFloat(pricingFast.innerData);
 		return result;
 	}
@@ -121,15 +122,22 @@ class VAST_3_0 implements IParser
 		for (creativeFast in creatives) 
 		{
 			var creative = new Creative();
-			if (creativeFast.has.id) creative.id = creativeFast.att.id;
-			if (creativeFast.has.sequence) creative.sequence = Std.parseInt(creativeFast.att.sequence);
-			if (creativeFast.has.AdID) creative.adID = creativeFast.att.AdID;
-			if (creativeFast.has.apiFramework) creative.apiFramework = creativeFast.att.apiFramework;
+			if (creativeFast.has.id) 
+				creative.id = creativeFast.att.id;
+			if (creativeFast.has.sequence) 
+				creative.sequence = Std.parseInt(creativeFast.att.sequence);
+			if (creativeFast.has.AdID) 
+				creative.adID = creativeFast.att.AdID;
+			if (creativeFast.has.apiFramework) 
+				creative.apiFramework = creativeFast.att.apiFramework;
 			if (creativeFast.hasNode.creativeExtensions) 
 				creative.creativeExtensions = getCreativeExtensions(creativeFast.node.CreativeExtensions.nodes.CreativeExtension);
-			if (creativeFast.hasNode.Linear) creative.details = cast getLinear(creativeFast.nodes.Linear);
-			if (creativeFast.hasNode.CompanionAds) creative.details = cast getCompanionAds(creativeFast.node.CompanionAds.nodes.Companion);
-			if (creativeFast.hasNode.NonLinearAds) creative.details = cast getNonLinearAds(creativeFast.node.NonLinearAds.nodes.NonLinear);
+			if (creativeFast.hasNode.Linear) 
+				creative.details = cast getLinear(creativeFast.nodes.Linear);
+			if (creativeFast.hasNode.CompanionAds) 
+				creative.details = cast getCompanionAds(creativeFast.node.CompanionAds.nodes.Companion);
+			if (creativeFast.hasNode.NonLinearAds) 
+				creative.details = cast getNonLinearAds(creativeFast.node.NonLinearAds.nodes.NonLinear);
 			
 			result.push(creative);
 		}
@@ -485,7 +493,9 @@ class VAST_3_0 implements IParser
 	{
 		var adSystem = new AdSystem();
 		adSystem.name = adSystemFast.innerData;
-		if (adSystemFast.has.version) adSystem.version = adSystemFast.att.version;
+		if (adSystemFast.has.version) 
+			adSystem.version = adSystemFast.att.version;
+		
 		return adSystem;
 	}
 	
@@ -496,9 +506,11 @@ class VAST_3_0 implements IParser
 		for (impressionFast in impressions) 
 		{
 			var impression = new Impression();
-			if (impressionFast.has.id) impression.id = impressionFast.att.id;
+			if (impressionFast.has.id) 
+				impression.id = impressionFast.att.id;
+			
 			impression.url = impressionFast.innerData;
-		
+			
 			result.push(impression);
 		}
 		

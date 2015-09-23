@@ -20,7 +20,6 @@ import bs.model.vast.ad.creatives.Tracking;
 import bs.model.vast.ad.Impression;
 import bs.model.vast.Vast;
 import bs.tools.TimeTool;
-import bs.tools.Trace;
 import haxe.Constraints.Function;
 import haxe.xml.Fast;
 
@@ -38,14 +37,12 @@ class VAST_3_0 implements IParser
 	
 	public function parse(vastXML:Xml):Vast
 	{
-		Trace.xmlFromString(vastXML.toString());
-		trace("parse: VAST_3_0" );
-		var data:Vast = new Vast();
+		var result:Vast = new Vast();
 		vast = new Fast(vastXML);
-		data.version = cast (vast.node.VAST.att.version, VastVersion); 
-		data.ads = getAds(vast.node.VAST.nodes.Ad);
-		//trace(data);
-		return data;
+		result.version = cast (vast.node.VAST.att.version, VastVersion); 
+		result.ads = getAds(vast.node.VAST.nodes.Ad);
+		
+		return result;
 	}
 	
 	function getAds(ads:List<Fast>):Array<Ad>
@@ -61,19 +58,14 @@ class VAST_3_0 implements IParser
 			ad.system = getAdSystem(adFast.node.InLine.node.AdSystem);
 			ad.title = adFast.node.InLine.node.AdTitle.innerData;
 			ad.creatives = getCreatives(adFast.node.InLine.node.Creatives.nodes.Creative);
-			
-			
+		
 			//Optional
 			trace(ad);
+			
+			result.push(ad);
 		}
 		
-		/*for (adXml in vast.node.VAST.nodes.Ad) 
-		{
-			var ad:Ad = new Ad();
-			ad.
-		}*/
 		
-		result.push(new Ad());
 		return result;
 	}
 	
@@ -91,10 +83,8 @@ class VAST_3_0 implements IParser
 				creative.creativeExtensions = getCreativeExtensions(creativeFast.node.CreativeExtensions.nodes.CreativeExtension);
 			if (creativeFast.hasNode.Linear) creative.details = cast getLinear(creativeFast.nodes.Linear);
 			if (creativeFast.hasNode.CompanionAds) creative.details = cast getCompanionAds(creativeFast.node.CompanionAds.nodes.Companion);
-			if (creativeFast.hasNode.NonLinearAds) creative.details  = cast getNonLinearAds(creativeFast.node.NonLinearAds.nodes.NonLinear);
-				
+			if (creativeFast.hasNode.NonLinearAds) creative.details = cast getNonLinearAds(creativeFast.node.NonLinearAds.nodes.NonLinear);
 			
-			trace(creative.details[0]);
 			result.push(creative);
 		}
 		
@@ -103,13 +93,106 @@ class VAST_3_0 implements IParser
 	
 	function getNonLinearAds(nonLinears:List<Fast>):Array<NonLinear>
 	{
-		var result:Array<NonLinear> = new Array<NonLinear>();
+		var result = new Array<NonLinear>();
+		for (nonLinearFast in nonLinears) 
+		{
+			var nonLinear = new NonLinear();
+			//requierd
+			nonLinear.resources = getResources(nonLinearFast);
+			nonLinear.width = Std.parseFloat(nonLinearFast.att.width);
+			nonLinear.height = Std.parseFloat(nonLinearFast.att.height);
+			nonLinear.clicks = getClicks(nonLinearFast);
+			
+			//optional
+			if (nonLinearFast.has.expandedWidth)
+				nonLinear.expandedWidth =  Std.parseFloat(nonLinearFast.att.expandedWidth);
+			if (nonLinearFast.has.expandedHeight)
+				nonLinear.expandedHeight = Std.parseFloat(nonLinearFast.att.expandedHeight);
+			if (nonLinearFast.has.id)
+				nonLinear.id = nonLinearFast.att.id;
+			if (nonLinearFast.has.scalable)
+				nonLinear.scalable = (nonLinearFast.has.scalable == "true");
+			if (nonLinearFast.has.maintainAspectRatio)
+				nonLinear.maintainAspectRatio = (nonLinearFast.has.maintainAspectRatio == "true");
+			if (nonLinearFast.has.minSuggestedDuration)
+				nonLinear.minSuggestedDuration = TimeTool.convertTimeToSeconds(nonLinearFast.has.minSuggestedDuration);
+			if (nonLinearFast.has.apiFramework)
+				nonLinear.apiFramework = nonLinearFast.has.apiFramework;
+			if (nonLinearFast.hasNode.AdParameters)
+				nonLinear.adParameters = getAdParameters(nonLinearFast.node.AdParameters);
+			
+			
+			
+			
+			
+			
+			
+		}
 		return result;
 	}
 	
-	function getCompanionAds(nonLinears:List<Fast>):Array<Companion>
+	function getCompanionAds(companions:List<Fast>):Array<Companion>
 	{
-		var result:Array<Companion> = new Array<Companion>();
+		var result  = new Array<Companion>();
+		for (companionFast in companions) 
+		{		
+			var companion = new Companion();
+			//requierd
+			companion.width = Std.parseFloat(companionFast.att.width);
+			companion.height =Std.parseFloat(companionFast.att.height);
+			companion.resources = getResources(companionFast);
+			companion.clicks = getClicks(companionFast);
+			
+			//optional
+			if(companionFast.has.id)
+				companion.id = companionFast.att.id;
+			if (companionFast.has.assetWidth)
+				companion.assetWidth = Std.parseFloat(companionFast.att.assetWidth);
+			if (companionFast.has.assetHeight)
+				companion.assetHeight = Std.parseFloat(companionFast.att.assetHeight);
+			if (companionFast.has.expandedWidth)
+				companion.expandedWidth = Std.parseFloat(companionFast.att.expandedWidth);
+			if (companionFast.has.expandedHeight)
+				companion.expandedHeight = Std.parseFloat(companionFast.att.expandedHeight);
+			if (companionFast.has.apiFramework)
+				companion.apiFramework = companionFast.att.apiFramework;
+			if (companionFast.has.adSlotID)
+				companion.adSlotID = companionFast.att.adSlotID;
+			if (companionFast.has.required)
+				companion.required = Companion.getRequierType(companionFast.att.required);
+			if (companionFast.hasNode.AdParameters)
+				companion.adParameters = getAdParameters(companionFast.node.AdParameters);
+			if (companionFast.hasNode.trackingEvents)
+				companion.trackingEvents = getTrackingEvents(companionFast.node.trackingEvents.nodes.Tracking);
+			if (companionFast.hasNode.AltText)
+				companion.altText  = companionFast.node.AltText.innerData;
+				
+			result.push(companion);
+		}
+		
+		return result;
+	}
+	
+	function getResources(resourcesFast:Fast):Array<Resource> 
+	{
+		var result = new Array<Resource>();
+		
+		if (resourcesFast.hasNode.IFrameResource) {
+			var iFrameResource = new Resource(ResourceType.I_FRAME_RESOURCE);
+			iFrameResource.url = resourcesFast.node.IFrameResource.innerData;
+			result.push(iFrameResource);
+		}
+		if (resourcesFast.hasNode.HTMLResource) {
+			var htmlResource = new Resource(ResourceType.HTML_RESOURCE);
+			htmlResource.url = resourcesFast.node.HTMLResource.innerData;
+			result.push(htmlResource);
+		} 
+		if(resourcesFast.hasNode.StaticResource) {
+			var staticResource = new Resource(ResourceType.STATIC_RESOURCE);
+			staticResource.creativeType = MIMETypeTool.getType(resourcesFast.node.StaticResource.att.creativeType);
+			staticResource.url = resourcesFast.node.StaticResource.innerData;
+			result.push(staticResource);
+		}
 		return result;
 	}
 	
@@ -178,8 +261,6 @@ class VAST_3_0 implements IParser
 			iconViewTracking.url = iconViewTrackingFast.innerData;
 			result.push(iconViewTracking);
 		}
-		
-		
 		
 		return result;
 	}
@@ -310,6 +391,24 @@ class VAST_3_0 implements IParser
 				nonLinearClickTracking.id = nonLinearClickTrackingFast.att.id;
 			nonLinearClickTracking.url = nonLinearClickTrackingFast.innerData;
 			result.push(nonLinearClickTracking);
+		} 
+		
+		for (companionClickThroughFast in  clicksFast.nodes.CompanionClickThrough) 
+		{
+			var companionClickThrough = new Click(ClickType.COMPANION_CLICK_THROUGH);
+			if (companionClickThroughFast.has.id)
+				companionClickThrough.id = companionClickThroughFast.att.id;
+			companionClickThrough.url = companionClickThroughFast.innerData;
+			result.push(companionClickThrough);
+		}
+		
+		for (companionClickTrackingFast in  clicksFast.nodes.CompanionClickTracking) 
+		{
+			var companionClickTracking = new Click(ClickType.COMPANION_CLICK_TRACKING);
+			if (companionClickTrackingFast.has.id)
+				companionClickTracking.id = companionClickTrackingFast.att.id;
+			companionClickTracking.url = companionClickTrackingFast.innerData;
+			result.push(companionClickTracking);
 		}
 		
 		return result;

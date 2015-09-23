@@ -38,9 +38,9 @@ class NonLinear implements ICreativeDetails
 	 */
 	public var maintainAspectRatio:Bool;
 	/**
-	 * he minimum suggested duration that the creative should be displayed; duration is in the format HH:MM:SS.mmm (where .mmm is in milliseconds and is optional)
+	 * the minimum suggested duration that the creative should be displayed; duration is in the format HH:MM:SS.mmm (where .mmm is in milliseconds and is optional)
 	 */
-	public var minSuggestedDuration:String; 
+	public var minSuggestedDuration:Float; 
 	/**
 	 * the API necessary to communicate with the creative if available
 	 */
@@ -48,11 +48,11 @@ class NonLinear implements ICreativeDetails
 	/**
 	 * Each <NonLinear> element may have one or more resource elements that may be one of: <StaticResource>, <IFrameResource> or <HTMLResource>. Each resource element provides a CDATAdwrapped URI to the creative file to be displayed and describes the type of media used to deliver it. 
 	 */
-	public var resource:Array<Resource>;
+	public var resources:Array<Resource>;
 	/**
 	 * a container for the NonLinearClickThrough and NonLinearClickTracking
 	 */
-	public var click:Array<Click>;
+	public var clicks:Array<Click>;
 	/**
 	 * used to pass information to the creative unit; includes the attribute xmlEncoded that is a Boolean value for identifying whether the <AdParameters> value is xml encoded.
 	 */

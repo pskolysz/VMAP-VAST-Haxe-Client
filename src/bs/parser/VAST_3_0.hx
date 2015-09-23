@@ -17,7 +17,9 @@ import bs.model.vast.ad.creatives.MIMEType.MIMETypeTool;
 import bs.model.vast.ad.creatives.nonlinears.NonLinear;
 import bs.model.vast.ad.creatives.Resource;
 import bs.model.vast.ad.creatives.Tracking;
+import bs.model.vast.ad.Error;
 import bs.model.vast.ad.Impression;
+import bs.model.vast.ad.Pricing;
 import bs.model.vast.Vast;
 import bs.tools.TimeTool;
 import haxe.Constraints.Function;
@@ -41,7 +43,7 @@ class VAST_3_0 implements IParser
 		vast = new Fast(vastXML);
 		result.version = cast (vast.node.VAST.att.version, VastVersion); 
 		result.ads = getAds(vast.node.VAST.nodes.Ad);
-		
+		trace(result);
 		return result;
 	}
 	
@@ -60,12 +62,56 @@ class VAST_3_0 implements IParser
 			ad.creatives = getCreatives(adFast.node.InLine.node.Creatives.nodes.Creative);
 		
 			//Optional
-			trace(ad);
+			if (adFast.node.InLine.hasNode.Advertiser)
+				ad.advertiser = adFast.node.InLine.node.Advertiser.innerData;
+			if (adFast.node.InLine.hasNode.Description)
+				ad.description = adFast.node.InLine.node.Description.innerData;
+			if (adFast.node.InLine.hasNode.Error)
+				ad.errors = getErrors(adFast.node.InLine.nodes.Error);
+			if (adFast.node.InLine.hasNode.Extensions)
+				ad.extensions = getExtensions(adFast.node.InLine.node.Extensions);
+			if (adFast.node.InLine.hasNode.Pricing)
+				ad.pricing = getPricing(adFast.node.InLine.node.Pricing);
+			if (adFast.has.sequence)
+				ad.sequence = Std.parseInt(adFast.att.sequence);
+			if (adFast.node.InLine.hasNode.Survey)
+				ad.survey = adFast.node.InLine.node.Survey.innerData;
 			
 			result.push(ad);
 		}
 		
-		
+		return result;
+	}
+	
+	function getPricing(pricingFast:Fast):Pricing
+	{
+		var result = new Pricing();
+		if (pricingFast.has.currency)
+			result.currency = pricingFast.att.currency;
+		if (pricingFast.has.model)
+			result.model = pricingFast.att.model;
+		result.price = Std.parseFloat(pricingFast.innerData);
+		return result;
+	}
+	
+	function getExtensions(extensionsFast:Fast):Array<Fast>
+	{
+		var result = new Array<Fast>();
+		for (extensionFast in extensionsFast.elements) 
+		{
+			result.push(extensionFast);
+		}
+		return result;
+	}
+	
+	function getErrors(errors:List<Fast>):Array<Error> 
+	{
+		var result = new Array<Error>();
+		for (errorFast in errors ) 
+		{
+			var error = new Error();
+			error.url = errorFast.innerData;
+		}
 		return result;
 	}
 	
@@ -111,22 +157,15 @@ class VAST_3_0 implements IParser
 			if (nonLinearFast.has.id)
 				nonLinear.id = nonLinearFast.att.id;
 			if (nonLinearFast.has.scalable)
-				nonLinear.scalable = (nonLinearFast.has.scalable == "true");
+				nonLinear.scalable = (nonLinearFast.att.scalable == "true");
 			if (nonLinearFast.has.maintainAspectRatio)
-				nonLinear.maintainAspectRatio = (nonLinearFast.has.maintainAspectRatio == "true");
+				nonLinear.maintainAspectRatio = (nonLinearFast.att.maintainAspectRatio == "true");
 			if (nonLinearFast.has.minSuggestedDuration)
-				nonLinear.minSuggestedDuration = TimeTool.convertTimeToSeconds(nonLinearFast.has.minSuggestedDuration);
+				nonLinear.minSuggestedDuration = TimeTool.convertTimeToSeconds(nonLinearFast.att.minSuggestedDuration);
 			if (nonLinearFast.has.apiFramework)
-				nonLinear.apiFramework = nonLinearFast.has.apiFramework;
+				nonLinear.apiFramework = nonLinearFast.att.apiFramework;
 			if (nonLinearFast.hasNode.AdParameters)
 				nonLinear.adParameters = getAdParameters(nonLinearFast.node.AdParameters);
-			
-			
-			
-			
-			
-			
-			
 		}
 		return result;
 	}

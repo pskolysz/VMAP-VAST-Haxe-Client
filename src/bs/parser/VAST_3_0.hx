@@ -345,7 +345,7 @@ class VAST_3_0 implements IParser
 		var result = new Array<MediaFile>();
 		for (mediaFileFast in mediaFiles) 
 		{
-			var mediaFile = new MediaFile(mediaFileFast.att.delivery);
+			var mediaFile = new MediaFile(MediaFile.getDeliveryType(mediaFileFast.att.delivery));
 			//requierd
 			mediaFile.url = mediaFileFast.innerData;
 			mediaFile.type = MIMETypeTool.getType(mediaFileFast.att.delivery);
@@ -466,7 +466,7 @@ class VAST_3_0 implements IParser
 		var	result = new Array<Tracking>();
 		for (trackingFast in trackingevents) 
 		{
-			var trakcing = new Tracking(trackingFast.att.event);
+			var trakcing = new Tracking(Tracking.getType(trackingFast.att.event));
 			trakcing.url = trackingFast.innerData;
 			result.push(trakcing);
 		}

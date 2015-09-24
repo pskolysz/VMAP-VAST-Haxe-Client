@@ -6,16 +6,6 @@ import haxe.ds.StringMap;
  */
 class  MIMETypeTool
 {
-	static var enumMap = ["video/x-flv" => MIMEType.VIDEO_X_FLV,
-						"video/mp4" => MIMEType.VIDEO_MP4,
-						"video/f4v" => MIMEType.VIDEO_F4V,
-						"video/f4m" => MIMEType.VIDEO_F4M,
-						"application/x-shockwave-flash" => MIMEType.APPLICATION_X_SHOCKWAVE_FLASH,
-						"application/x-javascript" => MIMEType.APPLICATION_X_JAVASCRIPT,
-						"image/jpeg" => MIMEType.IMAGE_JPEG,
-						"image/gif" => MIMEType.IMAGE_GIF,
-						"image/png" => MIMEType.IMAGE_PNG];
-	
 	private function new(type) 
 	{
 		
@@ -28,6 +18,16 @@ class  MIMETypeTool
 			
 		return enumMap.get(type);
 	}
+	
+	static var enumMap = ["video/x-flv" => MIMEType.VIDEO_X_FLV,
+						"video/mp4" => MIMEType.VIDEO_MP4,
+						"video/f4v" => MIMEType.VIDEO_F4V,
+						"video/f4m" => MIMEType.VIDEO_F4M,
+						"application/x-shockwave-flash" => MIMEType.APPLICATION_X_SHOCKWAVE_FLASH,
+						"application/x-javascript" => MIMEType.APPLICATION_X_JAVASCRIPT,
+						"image/jpeg" => MIMEType.IMAGE_JPEG,
+						"image/gif" => MIMEType.IMAGE_GIF,
+						"image/png" => MIMEType.IMAGE_PNG];
 }
 
 enum MIMEType

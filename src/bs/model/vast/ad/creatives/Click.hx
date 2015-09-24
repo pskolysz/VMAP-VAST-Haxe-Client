@@ -14,45 +14,62 @@ class Click
 	{
 		this.type = type;
 	}
+	
+	public static inline function getType(type:String):ClickType
+	{
+		if (!enumMap.exists(type))
+			return null;
+			
+		return enumMap.get(type);
+	}
+	
+	static var enumMap = ["ClickThrough" => ClickType.CLICK_THROUGH,
+						"ClickTracking" => ClickType.CLICK_THROUGH,
+						"CustomClick" => ClickType.CLICK_THROUGH,
+						"IconClickThrough" => ClickType.CLICK_THROUGH,
+						"IconClickTracking" => ClickType.CLICK_THROUGH,
+						"CompanionClickThrough" => ClickType.CLICK_THROUGH,
+						"CompanionClickTracking" => ClickType.CLICK_THROUGH,
+						"NonLinearClickThrough" => ClickType.CLICK_THROUGH,
+						"NonLinearClickTracking" => ClickType.CLICK_THROUGH];
 }
 
-@:enum
-abstract ClickType(String) 
+enum ClickType 
 {
 	/**
 	 * contains a URI to a page that the video player should request and display in a Web browser window when the user clicks within the video frame while the Linear ad is  played (known as the 	"clickthrough" or "landing page" URI); the server can also use requests to this URI for tracking the "clickthrough" metric
 	 */
-	var CLICK_THROUGH = "ClickThrough";
+	CLICK_THROUGH;
 	/**
 	 * contains a URI to a location or file that the video player should request when the user clicks within the video frame while the Linear ad is played; the server can also use requests to this URI for tracking the “clickthrough” metric
 	 */
-	var CLICK_TRACKING = "ClickTracking";
+	CLICK_TRACKING;
 	/**
 	 * contains a URI to a location or file that the video player should request when the user clicks on a particular button, link, or other call to action associated with the Linear ad during its playback, but which does not open a new page in a Web browser window; the ClickThrough and CustomClick URLs should never be requested at the same time (i.e. for the same click)
 	 */
-	var CUSTOM_CLICK = "CustomClick";
+	CUSTOM_CLICK;
 	/**
 	 * contains a URI for a Webpage that the video player should open in a Web browser window when the user clicks on the Icon creative that is displayed in association with the ad; may also be used to track the click 
 	 */
-	var ICON_CLICK_THROUGH = "IconClickThrough";
+	ICON_CLICK_THROUGH;
 	/**
 	 * contains a URI to a location or file that the video player should request when the user clicks on the Icon creative
 	 */
-	var ICON_CLICK_TRACKING = "IconClickTracking";
+	ICON_CLICK_TRACKING;
 	/**
 	 * contains a URI for a Webpage that the video player should open in a Web browser window when the user clicks on the companion creative; URI may also be used to track the clickthrough
 	 */
-	var COMPANION_CLICK_THROUGH = "CompanionClickThrough";
+	COMPANION_CLICK_THROUGH;
 	/**
 	 * contains a URI to a location or file that the video player should request when the user clicks on the companion creative; used to track the clickthrough for InLine creative when the creative handles the click; in a Wrapper Ad the URI is used to track clickthroughs for the InLine response that results after the Wrapper
 	 */
-	var COMPANION_CLICK_TRACKING = "CompanionClickTracking";
+	COMPANION_CLICK_TRACKING;
 	/**
 	 * contains a URI for a Webpage that the video player should open in a Web browser window when the user clicks on the Nonlinear creative; 
 	 */
-	var NON_LINEAR_CLICK_THROUGH = "NonLinearClickThrough";
+	NON_LINEAR_CLICK_THROUGH;
 	/**
 	 * contains a URI to a location or file that the video player should request when the user clicks on the Nonlinear creative; used to track an InLine clickthrough when the creative handles the click; in a Wrapper Ad the URI is used to track clickthroughs for the InLine response that results after the Wrapper
 	 */
-	var NON_LINEAR_CLICK_TRACKING = "NonLinearClickTracking";
+	NON_LINEAR_CLICK_TRACKING;
 }

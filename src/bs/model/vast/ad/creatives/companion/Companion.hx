@@ -1,6 +1,7 @@
 package bs.model.vast.ad.creatives.companion;
 import bs.interfaces.ICreativeDetails;
 import bs.model.vast.ad.creatives.AdParameters;
+import bs.model.vast.ad.creatives.CreativeDetails;
 import bs.model.vast.ad.creatives.Resource;
 import bs.model.vast.ad.creatives.Tracking;
 
@@ -8,7 +9,8 @@ import bs.model.vast.ad.creatives.Tracking;
  * ...
  * @author Piotr Skolysz <piotr.skolysz@bigsoda.pl>
  */
-class Companion implements ICreativeDetails
+//class Companion implements ICreativeDetails
+class Companion extends CreativeDetails
 {
 	/**
 	 * an optional identifier for the creative
@@ -66,7 +68,7 @@ class Companion implements ICreativeDetails
 	/**
 	 * a container for the CompanionClickThrough and CompanionClickTracking
 	 */
-	public var companionClicks:Array<Click>;
+	public var clicks:Array<Click>;
 	/**
 	 * a container for the <Tracking> element used to track defined metrics defined by the event attribute
 	 */
@@ -75,24 +77,45 @@ class Companion implements ICreativeDetails
 	
 	public function new() 
 	{
-		
+		super();
 	}
 	
+		
+	static function stringToEnum<T>(type:String, en:T):T 
+	{
+		for (i in Reflect.fields(en)) {
+			if (i == type)
+				return Reflect.getProperty(en, i);
+		}
+		
+		return null;
+	}
+	public static inline function getRequierType(type:String):RequiredType
+	{
+		if (!enumMap.exists(type))
+			return null;
+			
+		return enumMap.get(type);
+	}
+	
+	static var enumMap = ["all" => RequiredType.ALL,
+						"any" => RequiredType.ANY,
+						"none" => RequiredType.NONE];
 }
 
-@:enum 
-abstract RequiredType(String)
+
+enum RequiredType
 {
 	/**
 	 * the video player must attempt to display the contents for all <Companion> elements provided; if all Companion creative cannot be displayed, the Ad should be disregarded and the ad server should be notified using the <Error> elemen
 	 */
-	var ALL = "all";
+	ALL;
 	/**
 	 * the video player must attempt to display content from at least one of the <Companion> elements provided (i.e. display the one with dimensions that best fit the page); if none of the Companion creative can be displayed, the Ad should be disregarded and the ad server should be notified using the <Error> element
 	 */
-	var ANY = "any";
+	ANY;
 	/**
 	 * the video player may choose to not display any of the Companion creative, but is not restricted from doing so; the ad server may use this option when the advertiser prefers that the master ad be displayed with or without the Companion creative
 	*/
-	var NONE = "none";	
+	NONE;	
 }

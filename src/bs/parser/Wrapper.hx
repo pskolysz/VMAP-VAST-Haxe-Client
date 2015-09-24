@@ -206,6 +206,8 @@ class Wrapper
 			for (creative in wrapper.elementsNamed("Creatives").next().elementsNamed("Creative")) {
 				//Linear Tracking
 				//Trace.xmlFromString(ad.firstElement().elementsNamed("Creatives").next().elementsNamed("Creative").next().toString());
+				//ad.firstElement().elementsNamed("Creatives").next().addChild(creative);
+				
 				
 				for (tracking in creative.elementsNamed("Linear").next().elementsNamed("TrackingEvents").next().elementsNamed("Tracking")) {
 					//TODO Ad doesn't have Tracking event

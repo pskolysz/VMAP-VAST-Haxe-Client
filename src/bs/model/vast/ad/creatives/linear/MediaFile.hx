@@ -62,16 +62,26 @@ class MediaFile
 	 */
 	public var apiFreamwork:String;
 	
-	public function new() 
+	public function new(delivery:DeliveryType) 
 	{
-		
+		this.delivery = delivery;
 	}
+	
+	public static inline function getDeliveryType(type:String):DeliveryType
+	{
+		if (!enumMap.exists(type))
+			return null;
+			
+		return enumMap.get(type);
+	}
+	
+	static var enumMap = ["progressive" => DeliveryType.PROGRESSIVE,
+						"streaming" => DeliveryType.STREAMING];
 	
 }
 
-@:enum
-abstract DeliveryType(String) 
+enum DeliveryType
 {
-	var PROGRESSIVE = "progressive";
-	var STREAMING = "streaming";
+	PROGRESSIVE;
+	STREAMING;
 }

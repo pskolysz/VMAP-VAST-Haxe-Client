@@ -1,5 +1,6 @@
 package bs.model.vast.ad;
 import bs.model.vast.ad.creatives.Creative;
+import haxe.xml.Fast;
 
 
 /**
@@ -59,7 +60,7 @@ class Ad
 	/**
 	 * XML node for custom extensions, as defined by the ad server. When used, a custom element should be nested under <Extensions> to help separate custom XML elements from VAST elements. The following example includes a custom xml element within the Extensions element.
 	 */
-	public var extensions:Array<Xml>;
+	public var extensions:Array<Fast>; 
 	
 	public function new() 
 	{

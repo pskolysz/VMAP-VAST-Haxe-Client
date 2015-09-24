@@ -31,9 +31,9 @@ class Creative
 	 */
 	public var creativeExtensions:Array<CreativeExtension>;
 	/**
-	 * one of Linear, Companion or NonLinear
+	 * list one of Linear, Companion or NonLinear
 	 */
-	public var details:ICreativeDetails;
+	public var details:Array<CreativeDetails>;
 	
 	public function new() 
 	{
